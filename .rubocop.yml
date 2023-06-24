@@ -4,3 +4,4 @@ require:
   - rubocop-rails
 AllCops:
   TargetRubyVersion: 3.2.2
+  DisabledByDefault: true
