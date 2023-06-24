@@ -59,8 +59,8 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
-  gem "rubocop-rails", require: false
-  gem "rubocop-shopify", require: false
+  gem "rubocop-shopify", "~> 2.3", require: false
+  gem "rubocop-rails", "~> 2.12", ">= 2.12.4", require: false
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"

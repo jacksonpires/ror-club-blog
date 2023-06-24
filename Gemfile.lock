@@ -223,8 +223,8 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.5)
   redis (~> 4.0)
-  rubocop-rails
-  rubocop-shopify
+  rubocop-rails (~> 2.12, >= 2.12.4)
+  rubocop-shopify (~> 2.3)
   sprockets-rails
   stimulus-rails
   turbo-rails
