@@ -5,3 +5,5 @@ require:
 AllCops:
   TargetRubyVersion: 3.2.2
   DisabledByDefault: true
+Style/WordArray:
+  EnforcedStyle: percent
