@@ -26,6 +26,8 @@ namespace :dev do
   end
 
   def show_spinner(message, end_message = "Done!")
+    raise "Você está em ambiente de produção!" if Rails.env.production?
+
     spinner = TTY::Spinner.new("[:spinner] #{message}")
     spinner.auto_spin
 

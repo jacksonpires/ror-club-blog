@@ -6,3 +6,17 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
+puts "==== Cadastrando Administradores ================="
+
+admins = %w(admin@admin.com test@test.com)
+admins.each do |email|
+  Admin.create!(
+    email: email,
+    password: ENV["DEFAULT_PASSWORD"],
+    password_confirmation: ENV["DEFAULT_PASSWORD"],
+  )
+end
+
+puts "==== Administradores cadastrados com sucesso! ===="
