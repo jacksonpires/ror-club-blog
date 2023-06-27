@@ -1,4 +1,11 @@
-<p style="color: green"><%= notice %></p>
+<p class="notice" style="color: green"><%= notice %></p>
+<p class="alert" style="color: green"><%= alert %></p>
+
+<%= button_to destroy_admin_session_path, method: :delete, data: { turbo: false }, remote: false do %>
+  Fazer Logoff
+<% end %>
+
+<%= current_admin.email %>
 
 <h1>Posts</h1>
 
