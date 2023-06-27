@@ -46,5 +46,8 @@ module RorClubBlog
     config.generators do |g|
       g.orm(:active_record, primary_key_type: :uuid)
     end
+
+    # I18n
+    config.i18n.default_locale = :"pt-BR"
   end
 end

@@ -3,4 +3,9 @@
     <strong>Title:</strong>
     <%= post.title %>
   </p>
+
+  <p>
+    <strong>Date:</strong>
+    <%= l(post.created_at, format: :short) %>
+  </p>
 </div>
