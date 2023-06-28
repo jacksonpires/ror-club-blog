@@ -23,6 +23,15 @@
 
   <div>
     <%= form.label :cover_image, style: "display: block" %>
+
+    <div id=<%= dom_id(post) %>>
+      <%= image_tag post.cover_image.variant(:thumb) if post.cover_image.attached? %>
+
+      <%= link_to "Remover",
+            destroy_cover_image_administrate_post_path(post),
+            data: { "turbo-confirm": "Tem certeza?", "turbo-method": :delete } if post.cover_image.attached? %>
+    </div>
+
     <%= form.file_field :cover_image %>
   </div>
 

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 class Administrate::PostsController < ApplicationController
-  before_action :set_post, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_post, only: [ :show, :edit, :update, :destroy, :destroy_cover_image ]
   before_action :authenticate_admin!
 
   # GET /posts or /posts.json
@@ -57,6 +57,14 @@ class Administrate::PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(administrate_posts_path, notice: "Post was successfully destroyed.") }
       format.json { head(:no_content) }
+    end
+  end
+
+  def destroy_cover_image
+    @post.cover_image.purge
+
+    respond_to do |format|
+      format.turbo_stream { render(turbo_stream: turbo_stream.remove(@post)) }
     end
   end
 
