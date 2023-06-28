@@ -8,4 +8,9 @@
     <strong>Date:</strong>
     <%= l(post.created_at, format: :short) %>
   </p>
+
+  <p>
+    <strong>Cover:</strong>
+    <%= image_tag post.cover_image.variant(:thumb) if post.cover_image.attached? %>
+  </p>
 </div>
