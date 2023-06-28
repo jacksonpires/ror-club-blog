@@ -1,6 +1,20 @@
 ---
-pt-BR:
+"pt-BR":
   activerecord:
+    models:
+      post: Artigo
+      admin: Administrador
+    attributes:
+      admin:
+        id: Identificador
+        email: E-mail
+        password: Senha
+        password_confirmation: Confirmação de Senha
+      post:
+        id: Identificador
+        title: Título
+        body: Corpo
+        cover_image: Imagem de capa
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
