@@ -3,6 +3,8 @@ class Administrate::PostsController < ApplicationController
   before_action :set_post, only: [ :show, :edit, :update, :destroy, :destroy_cover_image ]
   before_action :authenticate_admin!
 
+  layout "administrate"
+
   # GET /posts or /posts.json
   def index
     @posts = Post.all
