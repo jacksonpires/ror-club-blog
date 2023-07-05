@@ -5,8 +5,8 @@ namespace :dev do
     system("rails db:drop")
     system("rails db:create")
     system("rails db:migrate")
-
-    show_spinner("Adding Posts...") { add_posts }
+    system("rails db:seed")
+    system("rails dev:add_posts")
   end
 
   desc "Add 50 new posts"
