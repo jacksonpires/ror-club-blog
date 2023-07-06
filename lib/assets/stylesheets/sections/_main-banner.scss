@@ -1,0 +1,143 @@
+.main-banner-section {
+  margin-top: 24px;
+  padding-bottom: 160px;
+
+  @include bp-xxlarge() {
+    padding-bottom: 140px;
+  }
+
+  @include bp-large() {
+    padding-bottom: 110px;
+  }
+
+  @include bp-medium() {
+    padding-bottom: 0;
+  }
+
+  &::after {
+    position: absolute;
+    width: 100%;
+    height: 368px;
+    bottom: 0;
+    left: 0;
+    content: "";
+    z-index: -1;
+    background-image: url("./../../img/main-banner-detail.svg");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+
+    @include bp-xxlarge() {
+      height: 313px;
+    }
+
+    @include bp-large() {
+      height: 220px;
+    }
+
+    @include bp-medium() {
+      height: 180px;
+      background-size: 100%;
+      background-position: bottom center;
+    }
+
+    @include bp-small() {
+      height: 180px;
+      background-size: 140%;
+      background-position: bottom center;
+    }
+  }
+
+  .container {
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    margin-top: 120px;
+
+    @include bp-medium() {
+      width: 100%;
+      max-width: 100%;
+      margin-top: 0;
+      text-align: center;
+      align-items: center;
+    }
+  }
+
+  .text-container .title {
+    font-size: 3.875rem;
+    line-height: 4.875rem;
+    font-weight: $font-weight-bold;
+    color: $black;
+
+    @include bp-large() {
+      font-size: 3rem;
+      line-height: 3.75rem;
+    }
+
+    @include bp-medium() {
+      font-size: 1.625rem;
+      line-height: 2.06rem;
+    }
+  }
+
+  .text-container .subtitle {
+    font-size: 1.5rem;
+    line-height: 2.18rem;
+    font-weight: $font-weight-light;
+    color: $black;
+    margin-top: 12px;
+
+    @include bp-large() {
+      font-size: 1.2rem;
+      line-height: 1.9rem;
+    }
+
+    @include bp-medium() {
+      width: 300px;
+      font-size: 0.9rem;
+      line-height: 1.56rem;
+    }
+  }
+
+  .image-container {
+    max-width: 50%;
+
+    @include bp-medium() {
+      display: inline-flex;
+      max-width: 100%;
+      width: 100%;
+      justify-content: center;
+      margin-top: 24px;
+    }
+  }
+
+  .image-container img {
+    max-width: 100%;
+    width: 494px;
+    aspect-ratio: 16/20;
+    object-fit: cover;
+    object-position: center center;
+    border: 12px solid #fff;
+    border-radius: 54px;
+
+    @include bp-large() {
+      width: 404px;
+    }
+
+    @include bp-medium() {
+      width: 320px;
+      border: 6px solid #fff;
+    }
+
+    @include bp-small() {
+      width: 260px;
+    }
+  }
+}

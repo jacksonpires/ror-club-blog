@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruby on Rails Club - Home</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="libs/slick/slick.css">
+  <!-- Style -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header class="section header-section">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="img/logo.svg" alt="Logo Ruby on Rails Club">
+      </a>
+      <nav class="menu" id="menu">
+        <a href="#" class="close-menu-button" id="closeMenuButton">
+          <img src="./img/icons/white/close.svg" alt="Close Button">
+        </a>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="#">Categorias</a></li>
+          <li><a href="#">Cursos</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+        <div class="mobile-actions">
+          <div>
+            <a href="login-entrar.html" class="button secondary">Entrar</a>
+          </div>
+        </div>
+      </nav>
+      <a href="#" class="open-menu-button" id="openMenuButton">
+        <img src="./img/icons/red/menu.svg" alt="Open Menu">
+      </a>
+      <div class="actions">
+        <a href="login-entrar.html" class="button">Entrar</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section main-banner-section">
+    <div class="container">
+      <div class="text-container">
+        <h1 class="title">Transforme sua carreira como desenvolvedor</h1>
+        <h4 class="subtitle">O aprendizado definitivo que você estava procurando para acelerar sua carreira</h4>
+      </div>
+      <div class="image-container">
+        <img src="./img/main-banner.jpg" alt="Desenvolvedor com notebook">
+      </div>
+    </div>
+  </section>
+
+  <section class="section posts-grid-section">
+    <div class="container">
+      <div class="title-container with-item">
+        <h2 class="title">Publicações mais recentes</h2>
+        <a href="#" class="button">Ver todos</a>
+      </div>
+      <div class="grid" id="postGridHome">
+        <a href="post.html" class="item">
+          <img src="./img/posts/post1.jpg" class="item-image" alt="post 1">
+          <div class="item-row">
+            <div class="item-category">Backend</div>
+            <div class="item-comments">25</div>
+          </div>
+          <div class="item-row">
+            <div class="item-title">Ruby on Rails 6 completo, do básico ao avançado</div>
+          </div>
+          <div class="item-row">
+            <div class="item-author">Jackson Pires</div>
+            <div class="item-date">15 de set</div>
+          </div>
+        </a>
+        <a href="post.html" class="item">
+          <img src="./img/posts/post2.jpg" class="item-image" alt="post 2">
+          <div class="item-row">
+            <div class="item-category">Frontend</div>
+            <div class="item-comments">6</div>
+          </div>
+          <div class="item-row">
+            <div class="item-title">Melhores práticas para desenvolvimento web</div>
+          </div>
+          <div class="item-row">
+            <div class="item-author">Jackson Pires</div>
+            <div class="item-date">15 de set</div>
+          </div>
+        </a>
+        <a href="post.html" class="item">
+          <img src="./img/posts/post3.jpg" class="item-image" alt="post 1">
+          <div class="item-row">
+            <div class="item-category">DevOps</div>
+            <div class="item-comments">152</div>
+          </div>
+          <div class="item-row">
+            <div class="item-title">Aprenda os melhores comandos para terminal</div>
+          </div>
+          <div class="item-row">
+            <div class="item-author">Jackson Pires</div>
+            <div class="item-date">15 de set</div>
+          </div>
+        </a>
+        <a href="post.html" class="item">
+          <img src="./img/posts/post1.jpg" class="item-image" alt="post 1">
+          <div class="item-row">
+            <div class="item-category">Backend</div>
+            <div class="item-comments">25</div>
+          </div>
+          <div class="item-row">
+            <div class="item-title">Ruby on Rails 6 completo, do básico ao avançado</div>
+          </div>
+          <div class="item-row">
+            <div class="item-author">Jackson Pires</div>
+            <div class="item-date">15 de set</div>
+          </div>
+        </a>
+        <a href="post.html" class="item">
+          <img src="./img/posts/post2.jpg" class="item-image" alt="post 2">
+          <div class="item-row">
+            <div class="item-category">Frontend</div>
+            <div class="item-comments">25</div>
+          </div>
+          <div class="item-row">
+            <div class="item-title">Melhores práticas para desenvolvimento web</div>
+          </div>
+          <div class="item-row">
+            <div class="item-author">Jackson Pires</div>
+            <div class="item-date">15 de set</div>
+          </div>
+        </a>
+        <a href="post.html" class="item">
+          <img src="./img/posts/post3.jpg" class="item-image" alt="post 1">
+          <div class="item-row">
+            <div class="item-category">DevOps</div>
+            <div class="item-comments">25</div>
+          </div>
+          <div class="item-row">
+            <div class="item-title">Aprenda os melhores comandos para terminal</div>
+          </div>
+          <div class="item-row">
+            <div class="item-author">Jackson Pires</div>
+            <div class="item-date">15 de set</div>
+          </div>
+        </a>
+      </div>
+      <div class="grid-mobile">
+        <div class="bullets" id="postGridHomeBullets"></div>
+        <div><a href="#" class="button clean">ver mais</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section categories-grid-section">
+    <div class="container">
+      <div class="title-container with-item">
+        <h2 class="title">Navegue por categoria</h2>
+        <a href="#" class="button">Ver todos</a>
+      </div>
+      <div class="grid">
+        <a href="#" class="item">
+          <img src="./img/categories/category1.jpg" alt="Categoria" class="item-image">
+          <div class="item-title">Design</div>
+          <p class="item-description">Confira as melhores tendências e boas práticas envolvendo design</p>
+        </a>
+        <a href="#" class="item">
+          <img src="./img/categories/category2.jpg" alt="Categoria" class="item-image">
+          <div class="item-title">Backend</div>
+          <p class="item-description">Confira as melhores tendências e boas práticas envolvendo design</p>
+        </a>
+        <a href="#" class="item">
+          <img src="./img/categories/category3.jpg" alt="Categoria" class="item-image">
+          <div class="item-title">Frontend</div>
+          <p class="item-description">Confira as melhores tendências e boas práticas envolvendo design</p>
+        </a>
+        <a href="#" class="item">
+          <img src="./img/categories/category4.jpg" alt="Categoria" class="item-image">
+          <div class="item-title">Sistemas Operacionais</div>
+          <p class="item-description">Confira as melhores tendências e boas práticas envolvendo design</p>
+        </a>
+        <a href="#" class="item">
+          <img src="./img/categories/category5.jpg" alt="Categoria" class="item-image">
+          <div class="item-title">Segurança</div>
+          <p class="item-description">Confira as melhores tendências e boas práticas envolvendo design</p>
+        </a>
+        <a href="#" class="item">
+          <img src="./img/categories/category6.jpg" alt="Categoria" class="item-image">
+          <div class="item-title">DevOps</div>
+          <p class="item-description">Confira as melhores tendências e boas práticas envolvendo design</p>
+        </a>
+        <a href="#" class="item">
+          <img src="./img/categories/category7.jpg" alt="Categoria" class="item-image">
+          <div class="item-title">Marketing</div>
+          <p class="item-description">Confira as melhores tendências e boas práticas envolvendo design</p>
+        </a>
+        <a href="#" class="item">
+          <img src="./img/categories/category8.jpg" alt="Categoria" class="item-image">
+          <div class="item-title">Cloud</div>
+          <p class="item-description">Confira as melhores tendências e boas práticas envolvendo design</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="section footer-section">
+    <div class="container">
+      <div class="box-container">
+        <div class="box">
+          <div class="box-title">Páginas</div>
+          <div class="list-container">
+            <ul>
+              <li><a href="#">Início</a></li>
+              <li><a href="#">Categorias</a></li>
+              <li><a href="#">Cursos</a></li>
+              <li><a href="#">Contato</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-title">Categorias</div>
+          <div class="list-container">
+            <ul>
+              <li><a href="#">Design</a></li>
+              <li><a href="#">Backend</a></li>
+              <li><a href="#">Frontend</a></li>
+              <li><a href="#">Sistemas Operacionais</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">Segurança</a></li>
+              <li><a href="#">DevOps</a></li>
+              <li><a href="#">Marketing</a></li>
+              <li><a href="#">Cloud</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-title">Posts Populares</div>
+          <div class="list-container">
+            <ul>
+              <li><a href="#">Ruby on Rails 6 do básico ao avançado</a></li>
+              <li><a href="#">Melhores práticas para desenvolvimento web</a></li>
+              <li><a href="#">Aprenda os melhores comandos para terminal</a></li>
+              <li><a href="#">Fundamentos do Ruby on Rails</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="social-container">
+        <div class="social">
+          <a href="#"><img src="./img/icons/gray/facebook.svg" alt="Facebook"></a>
+          <a href="#"><img src="./img/icons/gray/twitter.svg" alt="Twitter"></a>
+          <a href="#"><img src="./img/icons/gray/instagram.svg" alt="Instagram"></a>
+          <a href="#"><img src="./img/icons/gray/linkedin.svg" alt="Linkedin"></a>
+        </div>
+      </div>
+      <div class="logo-container">
+        <img src="./img/logo-footer.svg" alt="Logo Footer">
+        <span class="copyright">2022 - Ruby on Rails Club. Todos os direitos reservados</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./libs/jquery/jquery1.min.js"></script>
+  <script src="./libs/slick/slick.min.js"></script>
+  <script src="./js/menu.js"></script>
+  <script src="./js/posts-grid.js"></script>
+
+</body>
+
+</html>

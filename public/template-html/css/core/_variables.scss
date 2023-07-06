@@ -1,0 +1,56 @@
+////////////////////// Colors
+$red: #cc0000;
+$white: #f5f5f5;
+$black: #2f2f2f;
+$gray-light: #efefef;
+$gray: #898989;
+$gray-dark: darken($gray, 20%);
+$red-dark: #930f17;
+$color-primary: $red;
+$color-primary-contrast: #fff;
+$color-secondary: $red-dark;
+$color-secondary-contrast: #fff;
+
+////////////////////// Animation
+$animation-transition: 0.3s;
+$animation-hover-percent: 10%;
+$animation-active-percent: 20%;
+
+////////////////////// Container
+$container-width: 1178px;
+$container-padding: 20px;
+
+////////////////////// Fonts
+$font-family: "Merriweather Sans", sans-serif;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 600;
+$font-weight-bolder: 800;
+
+////////////////////// Break Points
+$bp-xxlarge: 1400px;
+$bp-xlarge: 1237px;
+$bp-large: 1074px;
+$bp-medium: 911px;
+$bp-small: 748px;
+$bp-xsmall: 585px;
+$bp-xxsmall: 422px;
+
+////////////////////// Inputs, Buttons
+$element-font-size: 1rem;
+$element-small-font-size: 0.875rem;
+$element-padding: 12px;
+$element-small-padding: 10px;
+
+////////////////////////////////////
+$radius: 6px;
+
+////////////////////// Admin Nav
+$admin-nav-padding: 12px;
+$admin-nav-color: #fff;
+$admin-nav-background-color: $color-primary;
+$admin-nav-background-color-hover: $color-secondary;
+$admin-content-padding: 60px;
+$admin-content-padding-mobile: 12px;
+$admin-nav-width: 280px;
+$admin-nav-closed-width: 48px;

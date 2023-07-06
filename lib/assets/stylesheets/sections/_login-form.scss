@@ -1,0 +1,41 @@
+.login-form-section {
+  @include bp-medium() {
+    min-height: calc(100vh - (71px + 190px));
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .container {
+    width: 498px;
+    max-width: 100%;
+  }
+
+  .form-title {
+    font-size: 1.75rem;
+    font-weight: $font-weight-bold;
+    margin-bottom: 20px;
+
+    @include bp-medium() {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+  }
+
+  .form-subtitle {
+    font-size: 0.875rem;
+    font-weight: $font-weight-regular;
+    color: $gray;
+  }
+
+  .form {
+    margin-top: 32px;
+  }
+
+  .social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+}

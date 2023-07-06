@@ -1,0 +1,44 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid #ebebeb;
+  max-width: 100% !important;
+
+  @include bp-medium() {
+    display: block;
+    overflow-x: scroll;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  td,
+  th {
+    padding: 16px 22px;
+    font-size: 0.875rem;
+    border-bottom: 1px solid #ebebeb;
+  }
+
+  td {
+    line-height: 1.3rem;
+  }
+
+  th {
+    font-size: 1rem;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+  }
+
+  .icons {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .icons a:hover {
+    opacity: 0.8;
+  }
+}

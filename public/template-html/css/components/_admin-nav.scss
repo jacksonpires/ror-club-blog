@@ -1,0 +1,134 @@
+.admin-nav {
+  position: relative;
+  padding: $admin-nav-padding;
+  background-color: $admin-nav-background-color;
+  flex-direction: column;
+  gap: 32px;
+  transition: width $animation-transition;
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .row.center {
+    justify-content: center;
+  }
+
+  .row.column {
+    flex-direction: column;
+  }
+
+  .row.column.center {
+    align-items: center;
+  }
+
+  .row-menu-button {
+    flex-direction: row !important;
+    @include bp-medium() {
+      flex-direction: row !important;
+    }
+  }
+
+  .user-name {
+    font-weight: $font-weight-bold;
+    color: $admin-nav-color;
+    font-size: 1rem;
+    transition: width $animation-transition, height $animation-transition;
+  }
+  .user-email {
+    font-weight: $font-weight-regular;
+    color: $admin-nav-color;
+    font-size: 0.875rem;
+    transition: width $animation-transition, height $animation-transition;
+    margin-top: 6px;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: $admin-nav-padding;
+  }
+
+  .menu a {
+    display: flex;
+    width: 100%;
+    padding: 14px 22px;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    gap: 14px;
+    border-radius: 6px;
+
+    &:hover {
+      transition: background-color $animation-transition;
+      background-color: darken($admin-nav-background-color-hover, 5%);
+    }
+
+    &.active {
+      background-color: $admin-nav-background-color-hover;
+      cursor: default;
+    }
+  }
+
+  .menu a .icon {
+    display: inline-flex;
+    min-width: 20px;
+    min-height: 20px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .menu a .icon img {
+    max-width: 100%;
+    max-height: 100%;
+    cursor: pointer;
+  }
+
+  .menu a label {
+    color: $admin-nav-color;
+    font-weight: $font-weight-bold;
+    font-size: 1rem;
+    cursor: pointer;
+    overflow: hidden;
+    transition: width $animation-transition, height $animation-transition;
+    position: relative;
+  }
+}
+
+body.menu-closed .admin-nav {
+  padding-left: 6px;
+  padding-right: 6px;
+  width: $admin-nav-closed-width;
+
+  .row {
+    justify-content: center;
+  }
+
+  .logout {
+    display: none;
+  }
+
+  .logo {
+    opacity: 0;
+  }
+  .user-name,
+  .user-email {
+    opacity: 0;
+    width: 1000px;
+  }
+
+  .menu a {
+    padding-left: 4px;
+    padding-right: 4px;
+    justify-content: center;
+  }
+
+  .menu a label {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}

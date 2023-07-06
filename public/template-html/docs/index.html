@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ruby on Rails Club - Componentes</title>
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="./../img/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="./../img/favicon.ico" type="image/x-icon">
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;600;800&display=swap"
+		rel="stylesheet">
+	<!-- Style -->
+	<link rel="stylesheet" href="../css/style.css">
+
+
+	<style>
+		body {
+			padding-bottom: 1000px;
+			background-color: #eee;
+		}
+
+		aside {
+			display: flex;
+			flex-direction: column;
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 300px;
+			height: 100vh;
+			padding: 24px;
+			gap: 6px;
+			overflow-y: auto;
+		}
+
+		aside strong {
+			display: flex;
+			width: 100%;
+			font-size: 1.3rem;
+			margin-top: 24px;
+		}
+
+		aside a {
+			display: flex;
+			width: 100%;
+			font-size: 1rem;
+		}
+
+		main {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			padding: 24px;
+			padding-left: calc(300px + 24px);
+			gap: 64px;
+		}
+
+		section {
+			display: flex;
+			width: 100%;
+			gap: 24px;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<aside>
+		<strong>Título</strong>
+		<a href="#sectionTitle">Título padrão</a>
+		<a href="#sectionTitleButton">Título com botão</a>
+
+		<strong>Botão</strong>
+		<a href="#sectionButton">Botão</a>
+		<a href="#sectionButtonSmall">Botão pequeno</a>
+		<a href="#sectionButtonIcon">Botão com ícone</a>
+		<a href="#sectionButtonSecondary">Botão secundário</a>
+		<a href="#sectionButtonClean">Botão clean</a>
+		<a href="#sectionButtonLight">Botão light</a>
+		<a href="#sectionButtonSocials">Botões sociais</a>
+
+		<strong>Formulário</strong>
+		<a href="#sectionForm">Formulário</a>
+		<a href="#sectionFormClean">Formulário clean</a>
+		<a href="#sectionFormDouble">Formulário 2 campos p/linha</a>
+		<a href="#sectionFormDivisor">Formulário com divisor</a>
+
+		<strong>Input</strong>
+		<a href="#sectionInput">Input padrão</a>
+
+		<strong>Select</strong>
+		<a href="#sectionSelect">Select padrão</a>
+		<a href="#sectionSelectClean">Select clean</a>
+		<a href="#sectionSelectSmall">Select pequeno</a>
+		<a href="#sectionSelectCleanSmall">Select clean pequeno</a>
+
+		<strong>Textarea</strong>
+		<a href="#sectionTextarea">Textarea padrão</a>
+		<a href="#sectionTextareaDarker">Textarea escuro</a>
+
+		<strong>Table</strong>
+		<a href="#sectionTable">Tabela padrão</a>
+
+	</aside>
+
+
+	<main>
+
+		<section id="sectionTitle">
+			<div class="title-container">
+				<h2 class="title">Título padrão</h2>
+			</div>
+		</section>
+
+		<section id="sectionTitleButton">
+			<div class="title-container with-item">
+				<h2 class="title">Título com botão de ação</h2>
+				<a href="#" class="button">Ver todos</a>
+			</div>
+		</section>
+
+		<section id="sectionButton">
+			<a href="#" class="button">botão</a>
+		</section>
+
+		<section id="sectionButtonSmall">
+			<a href="#" class="button small">botão pequeno</a>
+		</section>
+
+		<section id="sectionButtonIcon">
+			<a href="#" class="button">
+				<img src="./../img/icons/white/save.svg">
+				botão com ícone
+			</a>
+		</section>
+
+		<section id="sectionButtonSecondary">
+			<a href="#" class="button secondary">
+				botão secundário
+			</a>
+		</section>
+
+		<section id="sectionButtonClean">
+			<a href="#" class="button clean">
+				botão clean
+			</a>
+		</section>
+
+		<section id="sectionButtonLight">
+			<a href="#" class="button light">Botão light</a>
+		</section>
+
+		<section id="sectionButtonSocials">
+			<a href="login-senha.html" class="button google">
+				<span class="button-icon"></span>
+				<span class="button-label">Continuar com Google</span>
+			</a>
+			<a href="login-senha.html" class="button facebook">
+				<span class="button-icon"></span>
+				<span class="button-label">Continuar com Facebook</span>
+			</a>
+			<a href="login-senha.html" class="button apple">
+				<span class="button-icon"></span>
+				<span class="button-label">Continuar com Apple</span>
+			</a>
+		</section>
+
+		<section id="sectionForm">
+			<form action="#" class="form">
+				<div class="input-row">
+					<div class="input-container">
+						<label for="#" class="label">Label</label>
+						<input type="password" placeholder="Placeholder aqui.." class="input">
+					</div>
+				</div>
+				<div class="input-row">
+					<div class="input-container">
+						<a href="login-cadastro.html" type="submit" class="button full">Botão</a>
+					</div>
+				</div>
+			</form>
+		</section>
+
+		<section id="sectionFormClean">
+			<form action="#" class="form transparent borderless paddingless">
+				<div class="input-row">
+					<div class="input-container">
+						<label for="#" class="label">Label</label>
+						<input type="password" placeholder="Placeholder aqui.." class="input">
+					</div>
+				</div>
+				<div class="input-row">
+					<div class="input-container">
+						<a href="login-cadastro.html" type="submit" class="button full">Botão</a>
+					</div>
+				</div>
+			</form>
+		</section>
+
+		<section id="sectionFormDouble">
+			<form action="#" class="form">
+				<div class="input-row double">
+					<div class="input-container">
+						<label for="#" class="label">Senha</label>
+						<input type="password" placeholder="Crie uma senha" class="input">
+					</div>
+					<div class="input-container">
+						<label for="#" class="label">Confirmar Senha</label>
+						<input type="password" placeholder="Confirmar senha" class="input">
+					</div>
+				</div>
+				<div class="input-row">
+					<div class="input-container">
+						<a href="login-cadastro.html" type="submit" class="button full">Botão</a>
+					</div>
+				</div>
+			</form>
+		</section>
+
+		<section id="sectionFormDivisor">
+			<form action="#" class="form">
+				<div class="input-row">
+					<div class="input-container">
+						<label for="#" class="label">Label</label>
+						<input type="text" placeholder="placeholder" class="input">
+					</div>
+				</div>
+				<div class="form-divisor"></div>
+				<div class="input-row">
+					<div class="input-container">
+						<label for="#" class="label">Label</label>
+						<input type="text" placeholder="placeholder" class="input">
+					</div>
+				</div>
+				<div class="input-row">
+					<div class="input-container">
+						<a href="login-cadastro.html" type="submit" class="button full">Botão</a>
+					</div>
+				</div>
+			</form>
+		</section>
+
+		<section id="sectionInput">
+			<form action="#" class="form">
+				<div class="input-row">
+					<div class="input-container">
+						<label for="#" class="label">Input padrão</label>
+						<input type="text" placeholder="placeholder" class="input">
+					</div>
+				</div>
+			</form>
+		</section>
+
+		<section id="sectionSelect">
+			<form action="#" class="form">
+				<div class="input-row">
+					<div class="input-container">
+						<label for="#" class="label">Select padrão</label>
+						<select class="select">
+							<option value="1">Últimos comentários</option>
+							<option value="2">Mais recentes</option>
+						</select>
+					</div>
+				</div>
+			</form>
+		</section>
+
+		<section id="sectionSelectClean">
+			<form action="#" class="form">
+				<div class="input-row">
+					<div class="input-container">
+						<label for="#" class="label">Select clean</label>
+						<select class="select clean">
+							<option value="1">Últimos comentários</option>
+							<option value="2">Mais recentes</option>
+						</select>
+					</div>
+				</div>
+			</form>
+		</section>
+
+		<section id="sectionSelectSmall">
+			<form action="#" class="form">
+				<div class="input-row">
+					<div class="input-container">
+						<label for="#" class="label">Select pequeno</label>
+						<select class="select small">
+							<option value="1">Últimos comentários</option>
+							<option value="2">Mais recentes</option>
+						</select>
+					</div>
+				</div>
+			</form>
+		</section>
+
+		<section id="sectionSelectCleanSmall">
+			<form action="#" class="form">
+				<div class="input-row">
+					<div class="input-container">
+						<label for="#" class="label">Select clean pequeno</label>
+						<select class="select clean small">
+							<option value="1">Últimos comentários</option>
+							<option value="2">Mais recentes</option>
+						</select>
+					</div>
+				</div>
+			</form>
+		</section>
+
+		<section id="sectionTextarea">
+			<form action="#" class="form">
+				<div class="input-row">
+					<div class="input-container">
+						<label for="#" class="label">Textarea padrão</label>
+						<textarea class="textarea" cols="30" rows="10"></textarea>
+					</div>
+				</div>
+			</form>
+		</section>
+
+		<section id="sectionTextareaDarker">
+			<form action="#" class="form">
+				<div class="input-row">
+					<div class="input-container">
+						<label for="#" class="label">Textarea escuro</label>
+						<textarea class="textarea darker" cols="30" rows="10"></textarea>
+					</div>
+				</div>
+			</form>
+		</section>
+
+		<section id="sectionTable">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Data</th>
+						<th>Categoria</th>
+						<th>Nome</th>
+						<th>Ações</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>23/04/2020</td>
+						<td>Frontend</td>
+						<td>Como criar seu primeiro projeto em Ruby on Rails</td>
+						<td>
+							<div class="icons">
+								<a href="#" title="Editar"><img src="./../img/icons/gray/edit.svg"></a>
+								<a href="#" title="Visualizar"><img src="./../img/icons/gray/eye.svg"></a>
+								<a href="#" title="Deletar"><img src="./../img/icons/gray/close.svg"></a>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>23/04/2020</td>
+						<td>Frontend</td>
+						<td>Como restaurar um backup do Heroku em seu container docker do Postgres?</td>
+						<td>
+							<div class="icons">
+								<a href="#" title="Editar"><img src="./../img/icons/gray/edit.svg"></a>
+								<a href="#" title="Visualizar"><img src="./../img/icons/gray/eye.svg"></a>
+								<a href="#" title="Deletar"><img src="./../img/icons/gray/close.svg"></a>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>23/04/2020</td>
+						<td>Frontend</td>
+						<td>How to restore a Postgres file backup from Heroku on your local Postgres docker container?</td>
+						<td>
+							<div class="icons">
+								<a href="#" title="Editar"><img src="./../img/icons/gray/edit.svg"></a>
+								<a href="#" title="Visualizar"><img src="./../img/icons/gray/eye.svg"></a>
+								<a href="#" title="Deletar"><img src="./../img/icons/gray/close.svg"></a>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+
+	</main>
+
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+.header-section {
+  margin-top: 12px;
+  margin-bottom: 60px;
+
+  @include bp-medium() {
+    margin-bottom: 24px;
+  }
+
+  .container {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    width: 106px;
+
+    @include bp-medium() {
+      width: 66px;
+    }
+  }
+
+  .logo img {
+    max-width: 100%;
+  }
+
+  .menu {
+    @include bp-medium() {
+      transition: transform 0.5s;
+      transform: translate(100%, 0);
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 325px;
+      max-width: 90%;
+      height: 100%;
+      background-color: $color-primary;
+      padding: 36px $container-padding 36px 42px;
+      z-index: 10;
+
+      &.active {
+        transform: translate(0, 0);
+      }
+    }
+  }
+
+  .menu ul {
+    display: flex;
+    gap: 60px;
+
+    @include bp-large() {
+      gap: 42px;
+    }
+
+    @include bp-medium() {
+      flex-direction: column;
+    }
+  }
+
+  .menu li {
+    list-style: none;
+  }
+
+  .menu a {
+    list-style: none;
+    font-weight: $font-weight-bold;
+    font-size: 1rem;
+    transition: color $animation-transition;
+    color: $black;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &:active {
+      color: darken($color-primary, $animation-active-percent);
+    }
+
+    @include bp-medium() {
+      color: $white;
+
+      &:hover {
+        color: darken($white, 10%);
+      }
+
+      &:active {
+        color: darken($white, 20%);
+      }
+    }
+  }
+
+  .menu .mobile-actions {
+    display: none;
+
+    @include bp-medium() {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 36px;
+    }
+  }
+
+  .open-menu-button {
+    display: none;
+
+    @include bp-medium() {
+      display: inline-flex;
+    }
+  }
+
+  .close-menu-button {
+    display: none;
+
+    @include bp-medium() {
+      display: inline-flex;
+      width: 100%;
+      justify-content: flex-end;
+      padding: 4px 0 4px 4px;
+    }
+  }
+
+  .actions {
+    @include bp-medium() {
+      display: none;
+    }
+  }
+}

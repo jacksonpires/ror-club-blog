@@ -1,0 +1,29 @@
+.textarea {
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  outline: none;
+  display: inline-flex;
+  font-weight: $font-weight-regular;
+  border: 1px solid #d3d3d3;
+  color: $black;
+  border-radius: $radius;
+  padding: $element-padding ($element-padding * 2);
+  font-size: $element-font-size;
+  resize: vertical;
+}
+
+.textarea.darker {
+  background-color: $gray-light;
+}
+
+.textarea.double-padding {
+  padding: $element-padding * 2;
+}
+
+.textarea.full {
+  width: 100%;
+}

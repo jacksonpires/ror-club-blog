@@ -1,0 +1,84 @@
+.post-detail-content {
+  display: block;
+  width: 100%;
+
+  > * {
+    margin-top: 18px;
+  }
+
+  h1:not(:first-child),
+  h2:not(:first-child),
+  h3:not(:first-child),
+  h4:not(:first-child),
+  h5:not(:first-child),
+  h6 {
+    margin-top: 42px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    @include bp-medium() {
+      font-size: 2rem;
+    }
+  }
+  h2 {
+    font-size: 2.25rem;
+    @include bp-medium() {
+      font-size: 1.75rem;
+    }
+  }
+  h3 {
+    font-size: 2rem;
+    @include bp-medium() {
+      font-size: 1.5rem;
+    }
+  }
+  h4 {
+    font-size: 1.75rem;
+    @include bp-medium() {
+      font-size: 1.25rem;
+    }
+  }
+  h5 {
+    font-size: 1.5rem;
+    @include bp-medium() {
+      font-size: 1rem;
+    }
+  }
+  h6 {
+    font-size: 1rem;
+    @include bp-medium() {
+      font-size: 0.8rem;
+    }
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $black;
+    font-weight: $font-weight-bold;
+  }
+  p {
+    font-size: 1rem;
+    line-height: 1.8rem;
+    color: $gray-dark;
+
+    @include bp-medium() {
+      font-size: 0.9rem;
+      line-height: 1.6rem;
+    }
+  }
+  a {
+    color: $color-primary;
+    transition: color $animation-transition;
+
+    &:hover {
+      color: darken($color-primary, $animation-hover-percent);
+    }
+    &:active {
+      color: darken($color-primary, $animation-active-percent);
+    }
+  }
+}

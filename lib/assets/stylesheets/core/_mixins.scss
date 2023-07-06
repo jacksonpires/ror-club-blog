@@ -1,0 +1,61 @@
+$mq-support: true !default;
+@mixin bp($feature, $value) {
+  $media: only screen;
+
+  @if $mq-support == true {
+    @media #{$media} and ($feature: $value) {
+      @content;
+    }
+  } @else {
+    @if $feature == "min-width" {
+      @if $value <= $mq-fixed-value {
+        @content;
+      }
+    } @else if $feature == "max-width" {
+      @if $value >= $mq-fixed-value {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin bp-custom($resolution) {
+  @include bp(max-width, $resolution) {
+    @content;
+  }
+}
+@mixin bp-xxlarge {
+  @include bp(max-width, $bp-xxlarge) {
+    @content;
+  }
+}
+@mixin bp-xlarge {
+  @include bp(max-width, $bp-xlarge) {
+    @content;
+  }
+}
+@mixin bp-large {
+  @include bp(max-width, $bp-large) {
+    @content;
+  }
+}
+@mixin bp-medium {
+  @include bp(max-width, $bp-medium) {
+    @content;
+  }
+}
+@mixin bp-small {
+  @include bp(max-width, $bp-small) {
+    @content;
+  }
+}
+@mixin bp-xsmall {
+  @include bp(max-width, $bp-xsmall) {
+    @content;
+  }
+}
+@mixin bp-xxsmall {
+  @include bp(max-width, $bp-xxsmall) {
+    @content;
+  }
+}

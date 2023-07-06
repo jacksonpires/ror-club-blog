@@ -1,0 +1,12 @@
+.input {
+  border: 1px solid #d3d3d3;
+  border-radius: 9px;
+  padding: $element-padding ($element-padding * 2);
+  font-size: $element-font-size;
+  outline-color: $black;
+
+  @include bp-medium() {
+    padding: $element-small-padding ($element-small-padding * 2);
+    font-size: $element-small-font-size;
+  }
+}
