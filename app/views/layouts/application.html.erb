@@ -26,12 +26,9 @@
 
   <body>
     <%= render partial: "layouts/shared/application/header" %>
-    <%= render partial: "layouts/shared/application/main_banner" %>
-    <%= render partial: "layouts/shared/application/posts" %>
-    <%= render partial: "layouts/shared/application/categories" %>
+    <%= yield %>
     <%= render partial: "layouts/shared/application/footer" %>
 
-    <%= yield %>
 
     <%= javascript_include_tag "jquery/jquery1.min" %>
     <%= javascript_include_tag "slick/slick.min" %>
