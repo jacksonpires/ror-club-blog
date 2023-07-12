@@ -11,7 +11,7 @@
     position: relative;
     width: 50%;
     height: 100%;
-    background-image: url("./../../img/admin-login-background.jpg");
+    background-image: url(asset-path("admin-login-background.jpg"));
     background-repeat: no-repeat;
     background-size: cover;
     transition: 0.3s;
@@ -30,7 +30,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-image: url("./../../img/admin-login-shape.svg");
+    background-image: url(asset-path("admin-login-shape.svg"));
     background-repeat: no-repeat;
     background-position: bottom -350px center;
     background-size: 122% auto;

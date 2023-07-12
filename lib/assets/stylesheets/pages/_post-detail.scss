@@ -62,7 +62,7 @@
       width: 120%;
       height: 300px;
       content: "";
-      background-image: url("./../../img/post-detail-shape.svg");
+      background-image: url(asset-path("post-detail-shape.svg"));
       background-repeat: no-repeat;
       background-position: bottom 0 center;
       background-size: 110% auto;
@@ -121,7 +121,7 @@
     width: 100%;
     height: 100%;
     content: "";
-    background-image: url("./../../img/post-detail-shape.svg");
+    background-image: url(asset-path("post-detail-shape.svg"));
     background-repeat: no-repeat;
     background-position: bottom -180px center;
     background-size: 110% auto;
@@ -580,25 +580,25 @@
   }
 
   .post-detail-comment-item .actions-row .like {
-    background-image: url("./../../img/icons/black/thumbs-up.svg");
+    background-image: url(asset-path("icons/black/thumbs-up.svg"));
   }
 
   .post-detail-comment-item .actions-row .like.active {
-    background-image: url("./../../img/icons/red-dark/thumbs-up.svg");
+    background-image: url(asset-path("icons/red-dark/thumbs-up.svg"));
     color: $color-secondary;
   }
 
   .post-detail-comment-item .actions-row .deslike {
-    background-image: url("./../../img/icons/black/thumbs-down.svg");
+    background-image: url(asset-path("icons/black/thumbs-down.svg"));
   }
   .post-detail-comment-item .actions-row .deslike.active {
-    background-image: url("./../../img/icons/red-dark/thumbs-down.svg");
+    background-image: url(asset-path("icons/red-dark/thumbs-down.svg"));
     color: $color-secondary;
   }
   .post-detail-comment-item .actions-row .share {
     width: 18px;
     height: 18px;
-    background-image: url("./../../img/icons/black/share.svg");
+    background-image: url(asset-path("icons/black/share.svg"));
     background-repeat: no-repeat;
     background-position: center;
     background-size: 18px;

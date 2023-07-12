@@ -90,7 +90,7 @@
     font-weight: $font-weight-bold;
     color: $color-secondary;
     font-size: 1.125rem;
-    background-image: url("./../../img/icons/red-dark/comments.svg");
+    background-image: url(asset-path("icons/red-dark/comments.svg"));
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 16px;
@@ -130,7 +130,7 @@
     font-size: 0.9rem;
     font-weight: $font-weight-regular;
     color: $gray;
-    background-image: url("./../../img/icons/gray/author.svg");
+    background-image: url(asset-path("icons/gray/author.svg"));
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 13px;
@@ -145,7 +145,7 @@
     font-size: 0.9rem;
     font-weight: $font-weight-regular;
     color: $gray;
-    background-image: url("./../../img/icons/gray/date.svg");
+    background-image: url(asset-path("icons/gray/date.svg"));
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 13px;

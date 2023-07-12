@@ -99,7 +99,7 @@
   background-color: #fff;
 
   .button-icon {
-    background-image: url("./../../img/icons/colored/google.svg");
+    background-image: url(asset-path("icons/colored/google.svg"));
   }
 
   .button-label {
@@ -110,7 +110,7 @@
   background-color: #1877f2;
 
   .button-icon {
-    background-image: url("./../../img/icons/white/facebook.svg");
+    background-image: url(asset-path("icons/white/facebook.svg"));
   }
 
   .button-label {
@@ -121,7 +121,7 @@
   background-color: #000;
 
   .button-icon {
-    background-image: url("./../../img/icons/white/apple.svg");
+    background-image: url(asset-path("icons/white/apple.svg"));
   }
 
   .button-label {

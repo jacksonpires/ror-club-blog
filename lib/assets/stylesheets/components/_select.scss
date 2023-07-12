@@ -16,7 +16,7 @@
   font-size: $element-font-size;
   transition: background-color $animation-transition;
   width: auto;
-  background-image: url("./../../img/icons/white/arrow-down.svg");
+  background-image: url(asset-path("icons/white/arrow-down.svg"));
   background-repeat: no-repeat;
   background-position: right ($element-padding * 2) center;
   background-size: $element-padding;
@@ -51,6 +51,6 @@
   color: $color-primary;
   padding: 0 ($element-padding * 2) 0 0;
   background-position: right ($element-padding * 2) center;
-  background-image: url("./../../img/icons/red/arrow-down.svg");
+  background-image: url(asset-path("icons/red/arrow-down.svg"));
   background-position: right 0 center;
 }

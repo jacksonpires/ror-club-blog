@@ -22,7 +22,7 @@
     left: 0;
     content: "";
     z-index: -1;
-    background-image: url("./../../img/main-banner-detail.svg");
+    background-image: url(asset-path("main-banner-detail.svg"));
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
