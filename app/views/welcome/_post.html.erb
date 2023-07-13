@@ -1,5 +1,6 @@
 <a href="post.html" class="item">
-  <%= post.cover_image.attached? ? image_tag(post.cover_image.variant(:thumb), class: "item-image", alt:"post 1") : image_tag("posts/post1.jpg", class: "item-image", alt:"post 1") %>
+  <%= image_tag(cover_image_fallback(post), class: "item-image", alt:"post 1")  %>
+
   <div class="item-row">
     <div class="item-category">Backend</div>
     <div class="item-comments">25</div>
