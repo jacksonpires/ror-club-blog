@@ -21,7 +21,14 @@ namespace :dev do
       title = Faker::Lorem.sentence.delete(".")
       body = Faker::Lorem.paragraph(sentence_count: rand(150..200))
 
-      Post.create!(title: title, body: body)
+      post = Post.create!(title: title, body: body)
+
+      image_id = rand(1..3)
+
+      post.cover_image.attach(
+        io: File.open("#{Rails.root}/lib/tasks/images/post#{image_id}.jpg"),
+        filename: "post #{image_id}",
+      )
     end
   end
 
