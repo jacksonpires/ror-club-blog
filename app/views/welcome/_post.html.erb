@@ -1,6 +1,16 @@
-<div>
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
-</div>
+<a href="post.html" class="item">
+  <%= post.cover_image.attached? ? image_tag(post.cover_image.variant(:thumb), class: "item-image", alt:"post 1") : image_tag("posts/post1.jpg", class: "item-image", alt:"post 1") %>
+  <div class="item-row">
+    <div class="item-category">Backend</div>
+    <div class="item-comments">25</div>
+  </div>
+  <div class="item-row">
+    <div class="item-title">
+      <%= post.title %>
+    </div>
+  </div>
+  <div class="item-row">
+    <div class="item-author">Jackson Pires</div>
+    <div class="item-date">15 de set</div>
+  </div>
+</a>
