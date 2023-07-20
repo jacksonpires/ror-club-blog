@@ -1,16 +1,16 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
+<tr>
+  <td><%= l(post.created_at, format: :short) %></td>
+  <td>Frontend</td>
+  <td><%= post.title %></td>
+  <td>
+    <div class="icons">
+      <a href="#" title="Editar"><%= image_tag "icons/gray/edit.svg" %></a>
 
-  <p>
-    <strong>Date:</strong>
-    <%= l(post.created_at, format: :short) %>
-  </p>
+      <%= link_to [:administrate, post] do %>
+        <%= image_tag "icons/gray/eye.svg" %>
+      <% end %>
 
-  <p>
-    <strong>Cover:</strong>
-    <%= image_tag post.cover_image.variant(:thumb) if post.cover_image.attached? %>
-  </p>
-</div>
+      <a href="#" title="Deletar"><%= image_tag "icons/gray/close.svg" %></a>
+    </div>
+  </td>
+</tr>

@@ -28,6 +28,11 @@
     @include bp-medium() {
       flex-direction: row !important;
     }
+
+    .logout {
+      background: none;
+      border: none;
+    }
   }
 
   .user-name {
