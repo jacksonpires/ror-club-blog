@@ -1,17 +1,267 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RorClubBlog</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby on Rails Club - Admin Dashboard</title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- Favicon -->
+    <%= favicon_link_tag asset_path("favicon.ico") %>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;600;800&display=swap"
+      rel="stylesheet">
+
+    <!-- Style -->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <h1>LAYOUT ADMINISTRATIVO!!!</h1>
-    <%= yield %>
+
+  <body class="admin-page closed">
+
+    <aside class="admin-nav" id="adminMenu">
+      <div class="row row-menu-button">
+        <a href="./login.html" class="logout">
+          <%= image_tag "icons/white/exit.svg", alt:"exit" %>
+        </a>
+        <a href="#" id="adminMenuButton">
+          <%= image_tag "icons/white/menu.svg", alt:"menu" %>
+        </a>
+      </div>
+      <div class="row center">
+        <a href="./dashboard.html" class="logo">
+          <%= image_tag "logo.svg", alt:"logo" %>
+        </a>
+      </div>
+      <div class="row center column">
+        <h3 class="user-name">Jackson Pires</h3>
+        <h4 class="user-email">jacksonpires@gmail.com</h4>
+      </div>
+      <div class="row">
+        <nav class="menu">
+          <a href="./posts.html" class="active">
+            <div class="icon">
+              <%= image_tag "icons/white/posts.svg", alt:"posts" %>
+            </div>
+            <label for="#">Posts</label>
+          </a>
+          <a href="#">
+            <div class="icon">
+              <%= image_tag "icons/white/categories.svg", alt: "categories" %>
+            </div>
+            <label for="#">Categorias</label>
+          </a>
+          <a href="#">
+            <div class="icon">
+              <%= image_tag "icons/white/courses.svg", alt: "courses" %>
+            </div>
+            <label for="#">Cursos</label>
+          </a>
+          <a href="#">
+            <div class="icon">
+              <%= image_tag "icons/white/config.svg", alt: "config" %>
+            </div>
+            <label for="#">Configurações</label>
+          </a>
+        </nav>
+      </div>
+    </aside>
+
+    <main class="admin-main-content">
+      <h1 class="admin-title">Posts</h1>
+      <div class="main-content">
+        <div class="row">
+          <h2 class="admin-subtitle">Listagem de posts</h2>
+          <div class="buttons">
+            <a href="./posts-add.html" class="button small">
+              <%= image_tag "icons/white/add.svg", alt:"add" %>
+              Adicionar novo post
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Categoria</th>
+                <th>Nome</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>23/04/2020</td>
+                <td>Frontend</td>
+                <td>Como criar seu primeiro projeto em Ruby on Rails</td>
+                <td>
+                  <div class="icons">
+                    <a href="#" title="Editar"><%= image_tag "icons/gray/edit.svg" %></a>
+                    <a href="#" title="Visualizar"><%= image_tag "icons/gray/eye.svg" %></a>
+                    <a href="#" title="Deletar"><%= image_tag "icons/gray/close.svg" %></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>23/04/2020</td>
+                <td>Frontend</td>
+                <td>Como restaurar um backup do Heroku em seu container docker do Postgres?</td>
+                <td>
+                  <div class="icons">
+                    <a href="#" title="Editar"><%= image_tag "icons/gray/edit.svg" %></a>
+                    <a href="#" title="Visualizar"><%= image_tag "icons/gray/eye.svg" %></a>
+                    <a href="#" title="Deletar"><%= image_tag "icons/gray/close.svg" %></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>23/04/2020</td>
+                <td>Frontend</td>
+                <td>How to restore a Postgres file backup from Heroku on your local Postgres docker container?</td>
+                <td>
+                  <div class="icons">
+                    <a href="#" title="Editar"><%= image_tag "icons/gray/edit.svg" %></a>
+                    <a href="#" title="Visualizar"><%= image_tag "icons/gray/eye.svg" %></a>
+                    <a href="#" title="Deletar"><%= image_tag "icons/gray/close.svg" %></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>23/04/2020</td>
+                <td>Frontend</td>
+                <td>Qual a diferença entre usar .each, .find_each, .find_in_batches e .in_batches no Rails?</td>
+                <td>
+                  <div class="icons">
+                    <a href="#" title="Editar"><%= image_tag "icons/gray/edit.svg" %></a>
+                    <a href="#" title="Visualizar"><%= image_tag "icons/gray/eye.svg" %></a>
+                    <a href="#" title="Deletar"><%= image_tag "icons/gray/close.svg" %></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>23/04/2020</td>
+                <td>Frontend</td>
+                <td>Conhecendo e usando o Ngrok em aplicações Rails</td>
+                <td>
+                  <div class="icons">
+                    <a href="#" title="Editar"><%= image_tag "icons/gray/edit.svg" %></a>
+                    <a href="#" title="Visualizar"><%= image_tag "icons/gray/eye.svg" %></a>
+                    <a href="#" title="Deletar"><%= image_tag "icons/gray/close.svg" %></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>23/04/2020</td>
+                <td>Frontend</td>
+                <td>Autoload paths no Rails 6</td>
+                <td>
+                  <div class="icons">
+                    <a href="#" title="Editar"><%= image_tag "icons/gray/edit.svg" %></a>
+                    <a href="#" title="Visualizar"><%= image_tag "icons/gray/eye.svg" %></a>
+                    <a href="#" title="Deletar"><%= image_tag "icons/gray/close.svg" %></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>23/04/2020</td>
+                <td>Frontend</td>
+                <td>Vamos falar sobre mentoria?</td>
+                <td>
+                  <div class="icons">
+                    <a href="#" title="Editar"><%= image_tag "icons/gray/edit.svg" %></a>
+                    <a href="#" title="Visualizar"><%= image_tag "icons/gray/eye.svg" %></a>
+                    <a href="#" title="Deletar"><%= image_tag "icons/gray/close.svg" %></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>23/04/2020</td>
+                <td>Frontend</td>
+                <td>OneBitFood: um MVP inspirado no iFood com Rails e React (minicurso gratuito)</td>
+                <td>
+                  <div class="icons">
+                    <a href="#" title="Editar"><%= image_tag "icons/gray/edit.svg" %></a>
+                    <a href="#" title="Visualizar"><%= image_tag "icons/gray/eye.svg" %></a>
+                    <a href="#" title="Deletar"><%= image_tag "icons/gray/close.svg" %></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>23/04/2020</td>
+                <td>Frontend</td>
+                <td>Programação Funcional com Elixir – [Call to Action]!</td>
+                <td>
+                  <div class="icons">
+                    <a href="#" title="Editar"><%= image_tag "icons/gray/edit.svg" %></a>
+                    <a href="#" title="Visualizar"><%= image_tag "icons/gray/eye.svg" %></a>
+                    <a href="#" title="Deletar"><%= image_tag "icons/gray/close.svg" %></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>23/04/2020</td>
+                <td>Frontend</td>
+                <td>O blog Vídeos de TI vai acabar! :(</td>
+                <td>
+                  <div class="icons">
+                    <a href="#" title="Editar"><%= image_tag "icons/gray/edit.svg" %></a>
+                    <a href="#" title="Visualizar"><%= image_tag "icons/gray/eye.svg" %></a>
+                    <a href="#" title="Deletar"><%= image_tag "icons/gray/close.svg" %></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>23/04/2020</td>
+                <td>Frontend</td>
+                <td>PROGRAMAÇÃO FUNCIONAL COM ELIXIR – [CALL TO ACTION]!</td>
+                <td>
+                  <div class="icons">
+                    <a href="#" title="Editar"><%= image_tag "icons/gray/edit.svg" %></a>
+                    <a href="#" title="Visualizar"><%= image_tag "icons/gray/eye.svg" %></a>
+                    <a href="#" title="Deletar"><%= image_tag "icons/gray/close.svg" %></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>23/04/2020</td>
+                <td>Frontend</td>
+                <td>Como criar seu primeiro projeto em Ruby on Rails</td>
+                <td>
+                  <div class="icons">
+                    <a href="#" title="Editar"><%= image_tag "icons/gray/edit.svg" %></a>
+                    <a href="#" title="Visualizar"><%= image_tag "icons/gray/eye.svg" %></a>
+                    <a href="#" title="Deletar"><%= image_tag "icons/gray/close.svg" %></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>23/04/2020</td>
+                <td>Frontend</td>
+                <td>Como criar seu primeiro projeto em Ruby on Rails</td>
+                <td>
+                  <div class="icons">
+                    <a href="#" title="Editar"><%= image_tag "icons/gray/edit.svg" %></a>
+                    <a href="#" title="Visualizar"><%= image_tag "icons/gray/eye.svg" %></a>
+                    <a href="#" title="Deletar"><%= image_tag "icons/gray/close.svg" %></a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <%#= yield %>
+
+    <%= javascript_include_tag "admin" %>
   </body>
 </html>
