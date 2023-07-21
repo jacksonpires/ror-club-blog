@@ -20,6 +20,7 @@
 
     <!-- Style -->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
 
     <%= javascript_importmap_tags %>
   </head>
@@ -31,6 +32,15 @@
       <%= yield %>
     </main>
 
+    <%= javascript_include_tag "jquery/jquery1.min" %>
     <%= javascript_include_tag "admin" %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+      toastr.info('Are you the 6 fingered man?')
+      toastr.success('Are you the 6 fingered man?')
+      toastr.warning('Are you the 6 fingered man?')
+      toastr.error('Are you the 6 fingered man?')
+    </script>
   </body>
 </html>

@@ -20,6 +20,7 @@
 
     <!-- Style -->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
 
     <%= javascript_importmap_tags %>
   </head>
@@ -34,5 +35,6 @@
     <%= javascript_include_tag "slick/slick.min" %>
     <%= javascript_include_tag "menu" %>
     <%= javascript_include_tag "posts-grid" %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   </body>
 </html>
