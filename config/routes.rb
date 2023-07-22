@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :admins
 
   namespace :administrate do
-    get "/", to: "posts#index"
+    get "/", to: "dashboards#index"
 
     resources :posts do
       member do
