@@ -30,11 +30,16 @@
     <%= yield %>
     <%= render partial: "layouts/shared/application/footer" %>
 
-
     <%= javascript_include_tag "jquery/jquery1.min" %>
     <%= javascript_include_tag "slick/slick.min" %>
     <%= javascript_include_tag "menu" %>
     <%= javascript_include_tag "posts-grid" %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+      <% if notice %>
+        toastr.success("<%= notice %>")
+      <% end %>
+    </script>
   </body>
 </html>

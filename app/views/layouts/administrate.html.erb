@@ -37,10 +37,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <script>
-      toastr.info('Are you the 6 fingered man?')
-      toastr.success('Are you the 6 fingered man?')
-      toastr.warning('Are you the 6 fingered man?')
-      toastr.error('Are you the 6 fingered man?')
+      <% if notice %>
+        toastr.success("<%= notice %>")
+      <% end %>
     </script>
   </body>
 </html>

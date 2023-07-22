@@ -30,7 +30,7 @@ class Administrate::PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to(administrate_post_url(@post), notice: "Post was successfully created.") }
+        format.html { redirect_to(administrate_post_url(@post), notice: "Um artigo foi criado com sucesso!") }
         format.json { render(:show, status: :created, location: @post) }
       else
         format.html { render(:new, status: :unprocessable_entity) }
@@ -43,7 +43,7 @@ class Administrate::PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to(administrate_post_url(@post), notice: "Post was successfully updated.") }
+        format.html { redirect_to(administrate_post_url(@post), notice: "Um artigo foi atualizado com sucesso!") }
         format.json { render(:show, status: :ok, location: @post) }
       else
         format.html { render(:edit, status: :unprocessable_entity) }
@@ -57,7 +57,7 @@ class Administrate::PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to(administrate_posts_path, notice: "Post was successfully destroyed.") }
+      format.html { redirect_to(administrate_posts_path, notice: "Um artigo foi apagado com sucesso!") }
       format.json { head(:no_content) }
     end
   end
