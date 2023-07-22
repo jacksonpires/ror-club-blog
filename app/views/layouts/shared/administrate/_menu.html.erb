@@ -9,9 +9,9 @@
     </a>
   </div>
   <div class="row center">
-    <a href="./dashboard.html" class="logo">
+    <%= link_to administrate_path, class:"logo" do %>
       <%= image_tag "logo.svg", alt:"logo" %>
-    </a>
+    <% end %>
   </div>
   <div class="row center column">
     <h3 class="user-name">Seu nome</h3>
@@ -19,12 +19,13 @@
   </div>
   <div class="row">
     <nav class="menu">
-      <a href="./posts.html" class="active">
+      <%= link_to administrate_posts_path, class:"active" do %>
         <div class="icon">
           <%= image_tag "icons/white/posts.svg", alt:"posts" %>
         </div>
         <label for="#">Posts</label>
-      </a>
+      <% end %>
+
       <a href="#">
         <div class="icon">
           <%= image_tag "icons/white/categories.svg", alt: "categories" %>
