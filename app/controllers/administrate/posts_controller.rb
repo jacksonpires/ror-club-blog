@@ -1,9 +1,6 @@
 # frozen_string_literal: true
-class Administrate::PostsController < ApplicationController
+class Administrate::PostsController < AdministrateController
   before_action :set_post, only: [ :show, :edit, :update, :destroy, :destroy_cover_image ]
-  before_action :authenticate_admin!
-
-  layout "administrate"
 
   # GET /posts or /posts.json
   def index

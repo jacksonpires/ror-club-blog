@@ -1,8 +1,4 @@
 # frozen_string_literal: true
-class Administrate::DashboardsController < ApplicationController
-  before_action :authenticate_admin!
-
-  layout "administrate"
-
+class Administrate::DashboardsController < AdministrateController
   def index; end
 end
