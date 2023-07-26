@@ -1,41 +1,35 @@
-<%= form_with(model: [:administrate, post]) do |form| %>
-  <% if post.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<div class="row">
+  <%= form_with(model: [:administrate, post], class:"form", id:"post-form") do |form| %>
+    <div class="input-row">
+      <div class="input-container">
+        <%= form.label :title, class:"label" %>
+        <%= form.text_field :title, placeholder:"Digite aqui o título do post", class:"input" %>
+      </div>
     </div>
+    <div class="input-row">
+      <div class="input-container">
+        <%= form.label :body, class:"label" %>
+        <%= form.text_area :body, rows:"18", class:"textarea", placeholder:"Escreva aqui o conteúdo do post" %>
+      </div>
+    </div>
+    <div class="input-row">
+      <div class="input-container">
+        <div>
+          <%= form.label :cover_image, class:"label label-input-file" %>
+
+          <div id=<%= dom_id(post) %>>
+            <%= image_tag post.cover_image.variant(:thumb) if post.cover_image.attached? %>
+
+            <%= link_to "Remover",
+                  destroy_cover_image_administrate_post_path(post),
+                  data: { "turbo-confirm": "Tem certeza?", "turbo-method": :delete } if post.cover_image.attached? %>
+          </div>
+
+          <%= form.file_field :cover_image %>
+        </div>
+      </div>
+    </div>
+
+    <%= form.submit "Salvar Post", style: "display: none;" %>
   <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :body, style: "display: block" %>
-    <%= form.text_area :body %>
-  </div>
-
-  <div>
-    <%= form.label :cover_image, style: "display: block" %>
-
-    <div id=<%= dom_id(post) %>>
-      <%= image_tag post.cover_image.variant(:thumb) if post.cover_image.attached? %>
-
-      <%= link_to "Remover",
-            destroy_cover_image_administrate_post_path(post),
-            data: { "turbo-confirm": "Tem certeza?", "turbo-method": :delete } if post.cover_image.attached? %>
-    </div>
-
-    <%= form.file_field :cover_image %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

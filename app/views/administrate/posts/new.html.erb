@@ -1,9 +1,17 @@
-<h1>New post</h1>
+<h1 class="admin-title">
+  <%= link_to "Posts", administrate_posts_path %>
+</h1>
+<div class="main-content">
+  <div class="row">
+    <h2 class="admin-subtitle">Cadastro de post</h2>
+    <div class="buttons">
+      <a href="#" class="button small" onclick="document.forms['post-form'].submit()">
+        <%= image_tag "icons/white/save.svg" %>
+        Salvar post
+      </a>
+    </div>
+  </div>
 
-<%= render "form", post: @post %>
+  <%= render "form", post: @post %>
 
-<br>
-
-<div>
-  <%= link_to "Voltar para os artigos", administrate_posts_path %>
 </div>

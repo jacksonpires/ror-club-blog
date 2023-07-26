@@ -10,3 +10,36 @@
     font-size: $element-small-font-size;
   }
 }
+
+input::file-selector-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  border: 0;
+  appearance: none;
+  display: inline-flex;
+  font-weight: $font-weight-bolder;
+  background-color: $color-primary;
+  color: $color-primary-contrast;
+  border-radius: $radius;
+  padding: $element-padding ($element-padding * 2);
+  font-size: $element-font-size;
+  transition: background-color $animation-transition;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  gap: $element-padding;
+
+  &:hover {
+    background-color: darken($color-primary, $animation-hover-percent);
+  }
+
+  &:active {
+    background-color: darken($color-primary, $animation-active-percent);
+  }
+
+  @include bp-medium() {
+    font-size: $element-small-font-size;
+  }
+}
