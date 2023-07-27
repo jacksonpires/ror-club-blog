@@ -4,9 +4,11 @@
   <td><%= post.title %></td>
   <td>
     <div class="icons">
-      <a href="#" title="Editar"><%= image_tag "icons/gray/edit.svg" %></a>
+      <%= link_to edit_administrate_post_path(post), title:"Editar" do %>
+        <%= image_tag "icons/gray/edit.svg" %>
+      <% end %>
 
-      <%= link_to [:administrate, post] do %>
+      <%= link_to [:administrate, post], title:"Visualizar" do %>
         <%= image_tag "icons/gray/eye.svg" %>
       <% end %>
 
