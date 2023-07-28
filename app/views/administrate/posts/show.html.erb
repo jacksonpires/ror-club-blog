@@ -1,10 +1,11 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="admin-title">
+  <%= link_to "Posts", administrate_posts_path %>
+</h1>
+<div class="main-content">
+  <div class="row">
+    <h2 class="admin-subtitle">Visusalizar Post</h2>
+  </div>
 
-<%= render @post %>
+  <%= render "form", post: @post, action: :show %>
 
-<div>
-  <%= link_to "Edit this post", edit_administrate_post_path(@post) %> |
-  <%= link_to "Back to posts", administrate_posts_path %>
-
-  <%= button_to "Destroy this post", [:administrate, @post], method: :delete %>
 </div>

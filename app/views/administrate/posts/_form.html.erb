@@ -3,13 +3,13 @@
     <div class="input-row">
       <div class="input-container">
         <%= form.label :title, class:"label" %>
-        <%= form.text_field :title, placeholder:"Digite aqui o título do post", class:"input" %>
+        <%= form.text_field :title, disabled: (action == :show), placeholder:"Digite aqui o título do post", class:"input" %>
       </div>
     </div>
     <div class="input-row">
       <div class="input-container">
         <%= form.label :body, class:"label" %>
-        <%= form.text_area :body, rows:"18", class:"textarea", placeholder:"Escreva aqui o conteúdo do post" %>
+        <%= form.text_area :body, disabled: (action == :show), rows:"18", class:"textarea", placeholder:"Escreva aqui o conteúdo do post" %>
       </div>
     </div>
     <div class="input-row">
@@ -22,14 +22,16 @@
 
             <%= link_to "Remover",
                   destroy_cover_image_administrate_post_path(post),
-                  data: { "turbo-confirm": "Tem certeza?", "turbo-method": :delete } if post.cover_image.attached? %>
+                  data: { "turbo-confirm": "Tem certeza?", "turbo-method": :delete } if post.cover_image.attached? && (action != :show)%>
           </div>
 
-          <%= form.file_field :cover_image %>
+          <%= form.file_field :cover_image if (action != :show)%>
         </div>
       </div>
     </div>
 
     <%= form.submit "Salvar Post", style: "display: none;" %>
+
+    <%= button_to "Apagar post", [:administrate, post], data: { turbo: false }, method: :delete, class:"button small" %>
   <% end %>
 </div>
