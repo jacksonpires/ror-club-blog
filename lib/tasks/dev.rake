@@ -6,7 +6,13 @@ namespace :dev do
     system("rails db:create")
     system("rails db:migrate")
     system("rails db:seed")
+    system("rails dev:add_categories")
     system("rails dev:add_posts")
+  end
+
+  desc "Add categories"
+  task add_categories: :environment do
+    show_spinner("Adding Categories...") { add_categories }
   end
 
   desc "Add 50 new posts"
@@ -16,12 +22,20 @@ namespace :dev do
 
   private
 
+  def add_categories
+    categories = %w(Frontend Backend Linux MacOs Docker)
+    categories.each do |category|
+      Category.create!(name: category)
+    end
+  end
+
   def add_posts
     50.times do
       title = Faker::Lorem.sentence.delete(".")
       body = Faker::Lorem.paragraph(sentence_count: rand(150..200))
+      category = Category.all.sample
 
-      post = Post.create!(title: title, body: body)
+      post = Post.create!(title: title, body: body, category: category)
 
       image_id = rand(1..3)
 
