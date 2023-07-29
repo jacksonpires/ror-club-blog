@@ -4,6 +4,7 @@
     models:
       post: Artigo
       admin: Administrador
+      category: Categoria
     attributes:
       admin:
         id: Identificador
@@ -15,6 +16,9 @@
         title: Título
         body: Corpo
         cover_image: Imagem de capa
+        category_id: Categoria
+      category:
+        name: Nome
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

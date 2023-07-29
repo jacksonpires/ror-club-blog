@@ -4,6 +4,12 @@
 <div class="main-content">
   <div class="row">
     <h2 class="admin-subtitle">Visusalizar Post</h2>
+    <div class="buttons">
+      <%= link_to edit_administrate_post_path(@post), class: "button small" do %>
+        <%= image_tag "icons/white/edit.svg" %>
+        Editar post
+      <% end %>
+    </div>
   </div>
 
   <%= render "form", post: @post %>
