@@ -26,24 +26,12 @@
         <label for="#">Posts</label>
       <% end %>
 
-      <a href="#">
+      <%= link_to administrate_categories_path, class:"active" do %>
         <div class="icon">
-          <%= image_tag "icons/white/categories.svg", alt: "categories" %>
+          <%= image_tag "icons/white/categories.svg", alt:"categorias" %>
         </div>
         <label for="#">Categorias</label>
-      </a>
-      <a href="#">
-        <div class="icon">
-          <%= image_tag "icons/white/courses.svg", alt: "courses" %>
-        </div>
-        <label for="#">Cursos</label>
-      </a>
-      <a href="#">
-        <div class="icon">
-          <%= image_tag "icons/white/config.svg", alt: "config" %>
-        </div>
-        <label for="#">Configurações</label>
-      </a>
+      <% end %>
     </nav>
   </div>
 </aside>

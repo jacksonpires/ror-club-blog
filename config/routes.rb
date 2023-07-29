@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   namespace :administrate do
     get "/", to: "dashboards#index"
 
+    resources :categories
+
     resources :posts do
       member do
         delete "destroy_cover_image"
