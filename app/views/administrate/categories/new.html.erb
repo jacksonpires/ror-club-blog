@@ -1,0 +1,17 @@
+<h1 class="admin-title">
+  <%= link_to "Categorias", administrate_categories_path %>
+</h1>
+<div class="main-content">
+  <div class="row">
+    <h2 class="admin-subtitle">Cadastro de Categorias</h2>
+    <div class="buttons">
+      <a href="#" class="button small" onclick="document.forms['category-form'].submit()">
+        <%= image_tag "icons/white/save.svg" %>
+        Salvar categoria
+      </a>
+    </div>
+  </div>
+
+  <%= render "form", category: @category %>
+
+</div>
