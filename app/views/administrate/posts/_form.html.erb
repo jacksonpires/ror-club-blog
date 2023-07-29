@@ -15,7 +15,7 @@
     <div class="input-row">
       <div class="input-container">
         <%= form.label :category_id, class:"label" %>
-        <%= form.select :category_id, options_from_collection_for_select(Category.all, :id, :name, post.category_id), {}, { disabled: (params[:action] == "show"), class:"select" }%>
+        <%= form.select :category_id, options_from_collection_for_select(@categories, :id, :name, post.category_id), {}, { disabled: (params[:action] == "show"), class:"select" }%>
       </div>
     </div>
     <div class="input-row">
