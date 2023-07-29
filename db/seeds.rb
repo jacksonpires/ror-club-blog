@@ -10,10 +10,15 @@
 
 puts "==== Cadastrando Administradores ================="
 
-admins = %w(admin@admin.com test@test.com)
-admins.each do |email|
+admins = {
+  "admin@admin.com" => "Administrador",
+  "test@test.com" => "Teste",
+}
+
+admins.each do |email, name|
   Admin.create!(
     email: email,
+    name: name,
     password: ENV["DEFAULT_PASSWORD"],
     password_confirmation: ENV["DEFAULT_PASSWORD"],
   )

@@ -21,7 +21,10 @@ class Administrate::CategoriesController < AdministrateController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to(administrate_category_url(@category), notice: "Uma categoria foi criada com sucesso!") }
+        format.html {
+          redirect_to(administrate_category_url(@category), notice: "Uma categoria foi criada com sucesso!")
+        }
+
         format.json { render(:show, status: :created, location: @category) }
       else
         format.html { render(:new, status: :unprocessable_entity) }
@@ -33,7 +36,9 @@ class Administrate::CategoriesController < AdministrateController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to(administrate_category_url(@category), notice: "Uma categoria foi atualizada com sucesso!") }
+        format.html {
+          redirect_to(administrate_category_url(@category), notice: "Uma categoria foi atualizada com sucesso!")
+       }
         format.json { render(:show, status: :ok, location: @category) }
       else
         format.html { render(:edit, status: :unprocessable_entity) }
