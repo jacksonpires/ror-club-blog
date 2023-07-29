@@ -40,6 +40,10 @@
       <% if notice %>
         toastr.success("<%= notice %>")
       <% end %>
+
+      <% if alert %>
+        toastr.error("<%= alert %>")
+      <% end %>
     </script>
   </body>
 </html>

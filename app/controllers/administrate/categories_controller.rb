@@ -42,6 +42,20 @@ class Administrate::CategoriesController < AdministrateController
     end
   end
 
+  def destroy
+    respond_to do |format|
+      format.html do
+        if @category.posts.count > 0
+          redirect_to(administrate_categories_path, alert: "Não foi possível apagar a categoria!")
+        else
+          @category.destroy
+          redirect_to(administrate_categories_path, notice: "Uma categoria foi apagada com sucesso!")
+        end
+      end
+      format.json { head(:no_content) }
+    end
+  end
+
   private
 
   def set_category
