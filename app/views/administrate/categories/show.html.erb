@@ -1,0 +1,17 @@
+<h1 class="admin-title">
+  <%= link_to "Categoria", administrate_categories_path %>
+</h1>
+<div class="main-content">
+  <div class="row">
+    <h2 class="admin-subtitle">Visusalizar Categoria</h2>
+    <div class="buttons">
+      <%= link_to edit_administrate_category_path(@category), class: "button small" do %>
+        <%= image_tag "icons/white/edit.svg" %>
+        Editar categoria
+      <% end %>
+    </div>
+  </div>
+
+  <%= render "form", category: @category %>
+
+</div>
