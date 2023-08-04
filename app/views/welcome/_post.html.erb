@@ -1,4 +1,4 @@
-<a href="post.html" class="item">
+<%= link_to post_path(post), class:"item" do %>
   <%= image_tag(cover_image_fallback(post), class: "item-image", alt:"post 1")  %>
 
   <div class="item-row">
@@ -14,4 +14,4 @@
     <div class="item-author">Jackson Pires</div>
     <div class="item-date">15 de set</div>
   </div>
-</a>
+<% end %>

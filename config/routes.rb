@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :posts, only: [:show]
+
   get "/inicio", to: "welcome#index"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
