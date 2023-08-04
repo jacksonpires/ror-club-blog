@@ -202,18 +202,13 @@
       </a>
       <div class="post-detail-other-posts">
         <div class="other-posts-title">Outras publicações</div>
-        <a href="#" class="post-resume">
-          <%= image_tag "posts/post1.jpg", class:"post-resume-image" %>
-          <h4 class="post-resume-title">Ruby on Rails 6 completo, do básico ao avançado</h4>
-        </a>
-        <a href="#" class="post-resume">
-          <%= image_tag "posts/post2.jpg", class:"post-resume-image" %>
-          <h4 class="post-resume-title">Aprenda os melhores comandos para terminal</h4>
-        </a>
-        <a href="#" class="post-resume">
-          <%= image_tag "posts/post3.jpg", class:"post-resume-image" %>
-          <h4 class="post-resume-title">Melhores práticas para desenvolvimento web</h4>
-        </a>
+
+        <% @other_posts.each do |other_post| %>
+          <a href="#" class="post-resume">
+            <%= image_tag(cover_image_fallback(other_post, :thumb), alt: other_post.title, class:"post-resume-image") %>
+            <h4 class="post-resume-title"><%= other_post.title %></h4>
+          </a>
+        <% end %>
       </div>
       <a href="#" class="post-content-ad">
         <%= image_tag "ad/post-content-footer-ad.jpg" %>
