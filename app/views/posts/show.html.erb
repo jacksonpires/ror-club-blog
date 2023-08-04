@@ -1,2 +1,219 @@
-<h1><%= @post.title %></h1>
-<%= @post.body %>
+<section class="section posts-detail-title-section">
+  <div class="container">
+    <h1 class="post-detail-title"><%= @post.title %></h1>
+  </div>
+</section>
+
+<section class="section post-detail-default-section post-detail-image-section">
+  <div class="container">
+    <div class="primary-content">
+      <div class="post-detail-image">
+        <%= image_tag(cover_image_fallback(@post, :medium), alt: @post.title)  %>
+      </div>
+    </div>
+    <div class="secondary-content">
+      <a href="#" class="post-detail-image-ad">
+        <%= image_tag "ad/image-ad.jpg" %>
+      </a>
+      <div class="share-post">
+        <div class="share-post-title">Compartilhar post</div>
+        <div class="socials">
+          <a href="#"><%= image_tag "icons/red/facebook.svg" %></a>
+          <a href="#"><%= image_tag "icons/red/twitter.svg" %></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section post-detail-default-section author-section">
+  <div class="container">
+    <div class="primary-content">
+      <div class="author">
+        <div class="image-container">
+          <%= image_tag "author/jackson.jpg" %>
+        </div>
+        <div class="text-container">
+          <div class="label">Autor</div>
+          <div class="description">Jackson Pires</div>
+        </div>
+      </div>
+      <div class="category text-container">
+        <div class="label">Categoria</div>
+        <div class="description">Backend</div>
+      </div>
+      <div class="comments text-container">
+        <div class="label">Comentários</div>
+        <div class="description">15</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section post-detail-default-section post-content-section">
+  <div class="container">
+    <div class="primary-content">
+      <div class="post-detail-content">
+        <%= @post.body %>
+      </div>
+      <div class="post-detail-author-bio">
+        <div class="image">
+          <%= image_tag "author/jackson2.jpg" %>
+          <div class="text-mobile">
+            <div class="label">sobre o autor</div>
+            <div class="author-name">Jackson Pires</div>
+          </div>
+        </div>
+        <div class="text">
+          <div class="label">sobre o autor</div>
+          <div class="author-name">Jackson Pires</div>
+          <div class="author-description">
+            Desenvolvedor desde 1999. Especialista em Engenharia de Software com Ênfase em Software Livre. Professor
+            acadêmico de 2009 até 2016. Entusiasta Ruby on Rails desde 2007. Atualmente mantendo o site Vídeos de TI e
+            dedicando-se ao EAD com cursos na área de desenvolvimento de software, tendo treinado mais de 20.000
+            pessoas.
+          </div>
+          <div class="author-social">
+            <a href="#"><%= image_tag "icons/gray/facebook.svg" %></a>
+            <a href="#"><%= image_tag "icons/gray/instagram.svg" %></a>
+            <a href="#"><%= image_tag "icons/gray/twitter.svg" %></a>
+            <a href="#"><%= image_tag "icons/gray/linkedin.svg" %></a>
+            <a href="#"><%= image_tag "icons/gray/youtube.svg" %></a>
+          </div>
+        </div>
+      </div>
+      <div class="post-detail-comment">
+        <div class="comment-title-container">
+          <div class="comment-title">Comentários</div>
+          <div class="comment-actions">
+            <div class="label">ordenar por: </div>
+            <select class="select clean small">
+              <option value="1">Últimos comentários</option>
+              <option value="2">Mais recentes</option>
+            </select>
+          </div>
+        </div>
+        <div class="comment-form-container">
+          <textarea class="textarea darker full double-padding"
+            placeholder="Insira seu comentário aqui..."></textarea>
+          <button class="button small">Publicar</button>
+        </div>
+        <div class="post-detail-comments-list">
+          <div class="post-detail-comment-item">
+            <div class="author-row">
+              <div>
+                <div class="avatar">
+                  <%= image_tag "avatar/man-1.svg" %>
+                </div>
+                <div class="name">Marcio Junior</div>
+              </div>
+              <div>
+                <div class="date">30min atrás</div>
+              </div>
+            </div>
+            <div class="description-row">
+              <p>Wanted to ask if you’re available for a portrait shoot next week to ask if you’re available for a
+                portrait shoot next week to ask if you’re available for a portrait shoot next week</p>
+            </div>
+            <div class="actions-row">
+              <a href="#" class="like">6</a>
+              <a href="#" class="deslike">4</a>
+              <a href="#" class="share"></a>
+            </div>
+          </div>
+          <div class="post-detail-comment-item">
+            <div class="author-row">
+              <div>
+                <div class="avatar">
+                  <%= image_tag "avatar/woman-1.svg" %>
+                </div>
+                <div class="name">Ana Cristina</div>
+              </div>
+              <div>
+                <div class="date">1hr atrás</div>
+              </div>
+            </div>
+            <div class="description-row">
+              <p>Wanted to ask if you’re available for a portrait shoot next week to ask if you’re available for a
+                portrait shoot next week to ask if you’re available for a portrait shoot next week</p>
+            </div>
+            <div class="actions-row">
+              <a href="#" class="like active">6</a>
+              <a href="#" class="deslike">4</a>
+              <a href="#" class="share"></a>
+            </div>
+          </div>
+          <div class="post-detail-comment-item">
+            <div class="author-row">
+              <div>
+                <div class="avatar">
+                  <%= image_tag "avatar/man-2.svg" %>
+                </div>
+                <div class="name">Igor Henrique</div>
+              </div>
+              <div>
+                <div class="date">2 dias atrás</div>
+              </div>
+            </div>
+            <div class="description-row">
+              <p>Wanted to ask if you’re available for a portrait shoot next week to ask if you’re available for a
+                portrait shoot next week to ask if you’re available for a portrait shoot next week</p>
+            </div>
+            <div class="actions-row">
+              <a href="#" class="like">6</a>
+              <a href="#" class="deslike active">4</a>
+              <a href="#" class="share"></a>
+            </div>
+          </div>
+          <div class="post-detail-comment-item">
+            <div class="author-row">
+              <div>
+                <div class="avatar">
+                  <%= image_tag "avatar/woman-2.svg" %>
+                </div>
+                <div class="name">Maria Lúcia</div>
+              </div>
+              <div>
+                <div class="date">30/09/2022</div>
+              </div>
+            </div>
+            <div class="description-row">
+              <p>Wanted to ask if you’re available for a portrait shoot next week to ask if you’re available for a
+                portrait shoot next week to ask if you’re available for a portrait shoot next week</p>
+            </div>
+            <div class="actions-row">
+              <a href="#" class="like">6</a>
+              <a href="#" class="deslike">4</a>
+              <a href="#" class="share"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="secondary-content">
+      <a href="#" class="post-content-ad">
+        <%= image_tag "ad/post-content-ad.jpg" %>
+      </a>
+      <div class="post-detail-other-posts">
+        <div class="other-posts-title">Outras publicações</div>
+        <a href="#" class="post-resume">
+          <%= image_tag "posts/post1.jpg", class:"post-resume-image" %>
+          <h4 class="post-resume-title">Ruby on Rails 6 completo, do básico ao avançado</h4>
+        </a>
+        <a href="#" class="post-resume">
+          <%= image_tag "posts/post2.jpg", class:"post-resume-image" %>
+          <h4 class="post-resume-title">Aprenda os melhores comandos para terminal</h4>
+        </a>
+        <a href="#" class="post-resume">
+          <%= image_tag "posts/post3.jpg", class:"post-resume-image" %>
+          <h4 class="post-resume-title">Melhores práticas para desenvolvimento web</h4>
+        </a>
+      </div>
+      <a href="#" class="post-content-ad">
+        <%= image_tag "ad/post-content-footer-ad.jpg" %>
+      </a>
+    </div>
+  </div>
+  </div>
+</section>

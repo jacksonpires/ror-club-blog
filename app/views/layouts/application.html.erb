@@ -25,7 +25,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class=<%= "page-post-detail" if params[:controller] == "posts" %>>
     <%= render partial: "layouts/shared/application/header" %>
     <%= yield %>
     <%= render partial: "layouts/shared/application/footer" %>

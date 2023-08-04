@@ -37,10 +37,10 @@ namespace :dev do
 
       post = Post.create!(title: title, body: body, category: category)
 
-      image_id = rand(1..3)
+      image_id = rand(1..5)
 
       post.cover_image.attach(
-        io: File.open("#{Rails.root}/lib/tasks/images/post#{image_id}.jpg"),
+        io: File.open("#{Rails.root}/lib/tasks/images/0#{image_id}.jpg"),
         filename: "post #{image_id}",
       )
     end
