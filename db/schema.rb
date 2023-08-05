@@ -58,6 +58,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_05_001419) do
 
   create_table "authors", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
+    t.string "description"
     t.string "facebook_profile_url"
     t.string "instagram_profile_url"
     t.string "twitter_profile_url"
