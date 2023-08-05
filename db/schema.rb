@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_29_062424) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_05_001419) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -56,6 +56,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_29_062424) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "authors", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.string "facebook_profile_url"
+    t.string "instagram_profile_url"
+    t.string "twitter_profile_url"
+    t.string "linkedin_profile_url"
+    t.string "youtube_profile_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "categories", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -80,6 +91,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_29_062424) do
     t.datetime "updated_at", null: false
     t.string "slug"
     t.uuid "category_id"
+    t.uuid "author_id"
+    t.index ["author_id"], name: "index_posts_on_author_id"
     t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["slug"], name: "index_posts_on_slug", unique: true
   end
@@ -98,5 +111,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_29_062424) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "posts", "authors"
   add_foreign_key "posts", "categories"
 end

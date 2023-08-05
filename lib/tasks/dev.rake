@@ -7,12 +7,18 @@ namespace :dev do
     system("rails db:migrate")
     system("rails db:seed")
     system("rails dev:add_categories")
+    system("rails dev:add_authors")
     system("rails dev:add_posts")
   end
 
   desc "Add categories"
   task add_categories: :environment do
     show_spinner("Adding Categories...") { add_categories }
+  end
+
+  desc "Add authors"
+  task add_authors: :environment do
+    show_spinner("Adding Authors...") { add_authors }
   end
 
   desc "Add 50 new posts"
@@ -29,13 +35,32 @@ namespace :dev do
     end
   end
 
+  def add_authors
+    5.times do
+      Author.create!(
+        name: Faker::Name.name,
+        facebook_profile_url: Faker::Internet.url(host: "facebook.com"),
+        instagram_profile_url: Faker::Internet.url(host: "instagram.com"),
+        twitter_profile_url: Faker::Internet.url(host: "twitter.com"),
+        linkedin_profile_url: Faker::Internet.url(host: "linkedin.com"),
+        youtube_profile_url: Faker::Internet.url(host: "youtube.com"),
+      )
+    end
+  end
+
   def add_posts
     50.times do
       title = Faker::Lorem.sentence.delete(".")
       body = Faker::Lorem.paragraph(sentence_count: rand(150..200))
       category = Category.all.sample
+      author = Author.all.sample
 
-      post = Post.create!(title: title, body: body, category: category)
+      post = Post.create!(
+        title: title,
+        body: body,
+        category: category,
+        author: author,
+      )
 
       image_id = rand(1..5)
 
