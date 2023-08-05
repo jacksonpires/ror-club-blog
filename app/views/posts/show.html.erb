@@ -8,7 +8,7 @@
   <div class="container">
     <div class="primary-content">
       <div class="post-detail-image">
-        <%= image_tag(cover_image_fallback(@post, :medium), alt: @post.title)  %>
+        <%= image_tag(cover_image_fallback(@post, :medium), alt: @post.title) %>
       </div>
     </div>
     <div class="secondary-content">
@@ -36,7 +36,7 @@
     <div class="primary-content">
       <div class="author">
         <div class="image-container">
-          <%= image_tag "author/jackson.jpg" %>
+          <%= image_tag(avatar_image_fallback(@post.author), alt: @post.author.name) %>
         </div>
         <div class="text-container">
           <div class="label">Autor</div>
@@ -64,7 +64,7 @@
       </div>
       <div class="post-detail-author-bio">
         <div class="image">
-          <%= image_tag "author/jackson2.jpg" %>
+          <%= image_tag(avatar_image_fallback(@post.author), alt: @post.author.name) %>
           <div class="text-mobile">
             <div class="label">sobre o autor</div>
             <div class="author-name"><%= @post.author.name %></div>
