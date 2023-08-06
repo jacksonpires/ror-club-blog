@@ -18,6 +18,7 @@
         body: Corpo
         cover_image: Imagem de capa
         category_id: Categoria
+        author_id: Autor
       category:
         name: Nome
       author:

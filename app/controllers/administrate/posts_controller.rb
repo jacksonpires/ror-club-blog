@@ -2,6 +2,7 @@
 class Administrate::PostsController < AdministrateController
   before_action :set_post, only: [ :show, :edit, :update, :destroy, :destroy_cover_image ]
   before_action :set_categories, only: [:show, :edit, :new]
+  before_action :set_authors, only: [:show, :edit, :new]
 
   # GET /posts or /posts.json
   def index
@@ -76,10 +77,20 @@ class Administrate::PostsController < AdministrateController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :body, :cover_image, :category_id)
+      params.require(:post).permit(
+        :title,
+        :body,
+        :cover_image,
+        :category_id,
+        :author_id,
+      )
     end
 
     def set_categories
       @categories = Category.all
+    end
+
+    def set_authors
+      @authors = Author.all.order(:name)
     end
 end

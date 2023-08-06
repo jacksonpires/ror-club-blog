@@ -51,7 +51,7 @@ class Administrate::AuthorsController < AdministrateController
     respond_to do |format|
       format.html do
         if @author.posts.count > 0
-          redirect_to(administrate_authors_path, alert: "Não foi possível apagar autor!")
+          redirect_to(administrate_authors_path, alert: "Não foi possível apagar o autor!")
         else
           @author.destroy
           redirect_to(administrate_authors_path, notice: "Um autor foi apagado com sucesso!")
