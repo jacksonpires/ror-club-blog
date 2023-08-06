@@ -1,0 +1,27 @@
+<h1 class="admin-title">Autores</h1>
+<div class="main-content">
+  <div class="row">
+    <h2 class="admin-subtitle">Listagem de autores</h2>
+    <div class="buttons">
+      <%= link_to new_administrate_author_path, class:"button small" do %>
+        <%= image_tag "icons/white/add.svg", alt:"add" %>
+        Adicionar novo autor
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="width: 100%;">Nome</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @authors.each do |author| %>
+          <%= render author %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

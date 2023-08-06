@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get "/", to: "dashboards#index"
 
     resources :categories
+    resources :authors
 
     resources :posts do
       member do

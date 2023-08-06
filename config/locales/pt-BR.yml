@@ -5,6 +5,7 @@
       post: Artigo
       admin: Administrador
       category: Categoria
+      author: Autor
     attributes:
       admin:
         id: Identificador
@@ -19,6 +20,14 @@
         category_id: Categoria
       category:
         name: Nome
+      author:
+        name: Nome
+        description: Descrição
+        facebook_profile_url: URL do perfil do facebook
+        instagram_profile_url: URL do perfil do instagram
+        twitter_profile_url: URL do perfil do twitter
+        linkedin_profile_url: URL do perfil do linkedin
+        youtube_profile_url: URL do perfil do youtube
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

@@ -1,0 +1,17 @@
+<h1 class="admin-title">
+  <%= link_to "Autores", administrate_authors_path %>
+</h1>
+<div class="main-content">
+  <div class="row">
+    <h2 class="admin-subtitle">Edição de Autor</h2>
+    <div class="buttons">
+      <a href="#" class="button small" onclick="document.forms['author-form'].submit()">
+        <%= image_tag "icons/white/save.svg" %>
+        Salvar autor
+      </a>
+    </div>
+  </div>
+
+  <%= render "form", author: @author %>
+
+</div>

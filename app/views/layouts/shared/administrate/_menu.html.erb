@@ -26,6 +26,13 @@
         <label for="#">Posts</label>
       <% end %>
 
+      <%= link_to administrate_authors_path, class: active_link?("administrate/authors") do %>
+        <div class="icon">
+          <%= image_tag "icons/white/authors.svg", alt:"authors" %>
+        </div>
+        <label for="#">Autores</label>
+      <% end %>
+
       <%= link_to administrate_categories_path, class: active_link?("administrate/categories") do %>
         <div class="icon">
           <%= image_tag "icons/white/categories.svg", alt:"categorias" %>
