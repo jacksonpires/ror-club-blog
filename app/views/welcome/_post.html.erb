@@ -2,7 +2,7 @@
   <%= image_tag(cover_image_fallback(post), class: "item-image", alt:"post 1")  %>
 
   <div class="item-row">
-    <div class="item-category">Backend</div>
+    <div class="item-category"><%= post.category.name %></div>
     <div class="item-comments">25</div>
   </div>
   <div class="item-row">
@@ -11,7 +11,7 @@
     </div>
   </div>
   <div class="item-row">
-    <div class="item-author">Jackson Pires</div>
-    <div class="item-date">15 de set</div>
+    <div class="item-author"><%= post.author.name %></div>
+    <div class="item-date"><%= post.created_at.strftime("%d de %b") %></div>
   </div>
 <% end %>

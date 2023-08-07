@@ -68,6 +68,7 @@ namespace :dev do
         body: body,
         category: category,
         author: author,
+        created_at: [true, false].sample ? Time.now - rand(1..60).days : Time.now + rand(1..60).days,
       )
 
       image_id = rand(1..5)
