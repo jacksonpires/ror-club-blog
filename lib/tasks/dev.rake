@@ -29,9 +29,19 @@ namespace :dev do
   private
 
   def add_categories
-    categories = %w(Frontend Backend Linux MacOs Docker)
+    categories = %w(Frontend Backend Linux MacOs Docker Segurança Marketing Design Cloud DevOps)
     categories.each do |category|
-      Category.create!(name: category)
+      category = Category.create!(
+        name: category,
+        description: Faker::Lorem.paragraph(sentence_count: rand(2..10)),
+      )
+
+      image_id = rand(1..8)
+
+      category.cover_image.attach(
+        io: File.open("#{Rails.root}/lib/tasks/images/category#{image_id}.jpg"),
+        filename: "post #{image_id}",
+      )
     end
   end
 
