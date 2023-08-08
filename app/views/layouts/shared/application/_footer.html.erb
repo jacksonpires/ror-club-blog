@@ -5,7 +5,9 @@
         <div class="box-title">Páginas</div>
         <div class="list-container">
           <ul>
-            <li><a href="#">Início</a></li>
+            <li>
+              <%= link_to "Início", root_path %>
+            </li>
             <li><a href="#">Categorias</a></li>
             <li><a href="#">Cursos</a></li>
             <li><a href="#">Contato</a></li>
@@ -16,16 +18,14 @@
         <div class="box-title">Categorias</div>
         <div class="list-container">
           <ul>
-            <li><a href="#">Design</a></li>
-            <li><a href="#">Backend</a></li>
-            <li><a href="#">Frontend</a></li>
-            <li><a href="#">Sistemas Operacionais</a></li>
+            <% @footer_categories_1.each do |category| %>
+              <li><a href="#"><%= category.name %></a></li>
+            <% end %>
           </ul>
           <ul>
-            <li><a href="#">Segurança</a></li>
-            <li><a href="#">DevOps</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Cloud</a></li>
+            <% @footer_categories_2.each do |category| %>
+              <li><a href="#"><%= category.name %></a></li>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -33,10 +33,9 @@
         <div class="box-title">Posts Populares</div>
         <div class="list-container">
           <ul>
-            <li><a href="#">Ruby on Rails 6 do básico ao avançado</a></li>
-            <li><a href="#">Melhores práticas para desenvolvimento web</a></li>
-            <li><a href="#">Aprenda os melhores comandos para terminal</a></li>
-            <li><a href="#">Fundamentos do Ruby on Rails</a></li>
+            <% @footer_posts.each do |post| %>
+              <li><a href="#"><%= post.title %></a></li>
+            <% end %>
           </ul>
         </div>
       </div>
