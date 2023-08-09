@@ -123,10 +123,10 @@
                   <div class="avatar">
                     <%= image_tag "avatar/man-1.svg" %>
                   </div>
-                  <div class="name"><%= comment.user.email %></div>
+                  <div class="name"><%= comment.user.email.split("@").first %></div>
                 </div>
                 <div>
-                  <div class="date">30min atrás</div>
+                  <div class="date"><%= time_ago_in_words(comment.created_at) %></div>
                 </div>
               </div>
               <div class="description-row">

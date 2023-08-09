@@ -118,6 +118,7 @@ namespace :dev do
         user: User.all.sample,
         post: Post.all.sample,
         body: Faker::Lorem.paragraph(sentence_count: rand(5..30)),
+        created_at: [true, false].sample ? Time.now - rand(1..60).days : Time.now + rand(1..60).days,
       )
     end
   end
