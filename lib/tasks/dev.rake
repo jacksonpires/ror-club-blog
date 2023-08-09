@@ -9,6 +9,8 @@ namespace :dev do
     system("rails dev:add_categories")
     system("rails dev:add_authors")
     system("rails dev:add_posts")
+    system("rails dev:add_users")
+    system("rails dev:add_comments")
   end
 
   desc "Add categories"
@@ -24,6 +26,16 @@ namespace :dev do
   desc "Add 50 new posts"
   task add_posts: :environment do
     show_spinner("Adding Posts...") { add_posts }
+  end
+
+  desc "Add users"
+  task add_users: :environment do
+    show_spinner("Adding Users...") { add_users }
+  end
+
+  desc "Add comments"
+  task add_comments: :environment do
+    show_spinner("Adding Comments...") { add_comments }
   end
 
   private
@@ -86,6 +98,26 @@ namespace :dev do
       post.cover_image.attach(
         io: File.open("#{Rails.root}/lib/tasks/images/0#{image_id}.jpg"),
         filename: "post #{image_id}",
+      )
+    end
+  end
+
+  def add_users
+    50.times do
+      User.create!(
+        email: Faker::Internet.email,
+        password: ENV["DEFAULT_PASSWORD"],
+        password_confirmation: ENV["DEFAULT_PASSWORD"],
+      )
+    end
+  end
+
+  def add_comments
+    100.times do
+      Comment.create!(
+        user: User.all.sample,
+        post: Post.all.sample,
+        body: Faker::Lorem.paragraph(sentence_count: rand(5..30)),
       )
     end
   end

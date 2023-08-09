@@ -116,94 +116,31 @@
           <button class="button small">Publicar</button>
         </div>
         <div class="post-detail-comments-list">
-          <div class="post-detail-comment-item">
-            <div class="author-row">
-              <div>
-                <div class="avatar">
-                  <%= image_tag "avatar/man-1.svg" %>
+          <% @post.comments.each do |comment| %>
+            <div class="post-detail-comment-item">
+              <div class="author-row">
+                <div>
+                  <div class="avatar">
+                    <%= image_tag "avatar/man-1.svg" %>
+                  </div>
+                  <div class="name"><%= comment.user.email %></div>
                 </div>
-                <div class="name">Marcio Junior</div>
-              </div>
-              <div>
-                <div class="date">30min atrás</div>
-              </div>
-            </div>
-            <div class="description-row">
-              <p>Wanted to ask if you’re available for a portrait shoot next week to ask if you’re available for a
-                portrait shoot next week to ask if you’re available for a portrait shoot next week</p>
-            </div>
-            <div class="actions-row">
-              <a href="#" class="like">6</a>
-              <a href="#" class="deslike">4</a>
-              <a href="#" class="share"></a>
-            </div>
-          </div>
-          <div class="post-detail-comment-item">
-            <div class="author-row">
-              <div>
-                <div class="avatar">
-                  <%= image_tag "avatar/woman-1.svg" %>
+                <div>
+                  <div class="date">30min atrás</div>
                 </div>
-                <div class="name">Ana Cristina</div>
               </div>
-              <div>
-                <div class="date">1hr atrás</div>
+              <div class="description-row">
+                <p>
+                  <%= comment.body %>
+                </p>
               </div>
-            </div>
-            <div class="description-row">
-              <p>Wanted to ask if you’re available for a portrait shoot next week to ask if you’re available for a
-                portrait shoot next week to ask if you’re available for a portrait shoot next week</p>
-            </div>
-            <div class="actions-row">
-              <a href="#" class="like active">6</a>
-              <a href="#" class="deslike">4</a>
-              <a href="#" class="share"></a>
-            </div>
-          </div>
-          <div class="post-detail-comment-item">
-            <div class="author-row">
-              <div>
-                <div class="avatar">
-                  <%= image_tag "avatar/man-2.svg" %>
-                </div>
-                <div class="name">Igor Henrique</div>
-              </div>
-              <div>
-                <div class="date">2 dias atrás</div>
+              <div class="actions-row">
+                <a href="#" class="like">6</a>
+                <a href="#" class="deslike">4</a>
+                <a href="#" class="share"></a>
               </div>
             </div>
-            <div class="description-row">
-              <p>Wanted to ask if you’re available for a portrait shoot next week to ask if you’re available for a
-                portrait shoot next week to ask if you’re available for a portrait shoot next week</p>
-            </div>
-            <div class="actions-row">
-              <a href="#" class="like">6</a>
-              <a href="#" class="deslike active">4</a>
-              <a href="#" class="share"></a>
-            </div>
-          </div>
-          <div class="post-detail-comment-item">
-            <div class="author-row">
-              <div>
-                <div class="avatar">
-                  <%= image_tag "avatar/woman-2.svg" %>
-                </div>
-                <div class="name">Maria Lúcia</div>
-              </div>
-              <div>
-                <div class="date">30/09/2022</div>
-              </div>
-            </div>
-            <div class="description-row">
-              <p>Wanted to ask if you’re available for a portrait shoot next week to ask if you’re available for a
-                portrait shoot next week to ask if you’re available for a portrait shoot next week</p>
-            </div>
-            <div class="actions-row">
-              <a href="#" class="like">6</a>
-              <a href="#" class="deslike">4</a>
-              <a href="#" class="share"></a>
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
     </div>
