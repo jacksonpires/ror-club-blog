@@ -23,7 +23,8 @@
       <%= image_tag "icons/red/menu.svg", alt:"Open Menu" %>
     </a>
     <div class="actions">
-      <a href="#" class="button">Entrar</a>
+      <%= link_to "Entrar", new_user_session_path, class:"button" unless user_signed_in? %>
+      <%= button_to "Sair", destroy_user_session_path, method: :delete, class:"button" if user_signed_in? %>
     </div>
   </div>
 </header>

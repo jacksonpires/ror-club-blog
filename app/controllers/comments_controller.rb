@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     post = Post.friendly.find(params[:post_id])
     post.comments.create!(comment_params)

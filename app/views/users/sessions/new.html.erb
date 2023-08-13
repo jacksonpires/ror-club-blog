@@ -1,26 +1,24 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<section class="section login-form-section">
+  <div class="container">
+    <h1 class="form-title">Acessar sua conta</h1>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form paddingless borderless" }) do |f| %>
+      <div class="input-row">
+        <div class="input-container">
+          <%= f.label :email, class:"label" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input", placeholder:"Digite seu e-mail" %>
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-container">
+          <%= f.label :password, class:"label" %>
+          <%= f.password_field :password, autocomplete: "current-password", class:"input", placeholder:"Digite sua senha" %>
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-container">
+          <%= f.submit "Entrar", class:"button full" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</section>

@@ -127,7 +127,7 @@
                   <div class="avatar">
                     <%= image_tag "avatar/man-1.svg" %>
                   </div>
-                  <div class="name"><%= comment.user ? comment.user.email.split("@").first : "Anônimo" %></div>
+                  <div class="name"><%= comment.user.email.split("@").first %></div>
                 </div>
                 <div>
                   <div class="date"><%= time_ago_in_words(comment.created_at) %></div>

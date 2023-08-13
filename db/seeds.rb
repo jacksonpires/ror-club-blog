@@ -16,12 +16,22 @@ admins = {
 }
 
 admins.each do |email, name|
-  Admin.create!(
-    email: email,
-    name: name,
-    password: ENV["DEFAULT_PASSWORD"],
-    password_confirmation: ENV["DEFAULT_PASSWORD"],
-  )
+  Admin.find_or_create_by(email: email) do |admin|
+    admin.name = name
+    admin.password = ENV["DEFAULT_PASSWORD"]
+    admin.password_confirmation = ENV["DEFAULT_PASSWORD"]
+  end
 end
 
 puts "==== Administradores cadastrados com sucesso! ===="
+
+
+
+puts "==== Cadastrando Usuário ================="
+
+User.find_or_create_by(email: "user@user.com") do |user|
+  user.password = ENV["DEFAULT_PASSWORD"]
+  user.password_confirmation = ENV["DEFAULT_PASSWORD"]
+end
+
+puts "==== Usuário cadastrado com sucesso! ===="
