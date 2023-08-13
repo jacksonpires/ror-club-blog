@@ -1,11 +1,15 @@
 # frozen_string_literal: true
 class CommentsController < ApplicationController
+  def create
+    post = Post.friendly.find(params[:post_id])
+    post.comments.create!(comment_params)
 
-  # post_id: "fd991a50-2a2b-4e07-9500-b01f4c1be37c"
+    redirect_to(post_path(post))
+  end
 
-  def index
-    post = Post.find_by(id: params[:post_id] )
-    puts post.comments.inspect
-    puts "=================="
+  private
+
+  def comment_params
+    params.require(:comment).permit(:body)
   end
 end
