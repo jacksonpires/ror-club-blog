@@ -4,9 +4,15 @@ class CommentsController < ApplicationController
 
   def create
     post = Post.friendly.find(params[:post_id])
-    post.comments.create!(comment_params)
 
-    redirect_to(post_path(post))
+    comment = post.comments.new(comment_params)
+
+    if comment.save
+      redirect_to(post_path(post), notice: "Comentário criado com sucesso!")
+    else
+      redirect_to(post_path(post), alert: "Comentário não foi criado! - #{comment.errors.full_messages.join(", ")}")
+    end
+
   end
 
   private

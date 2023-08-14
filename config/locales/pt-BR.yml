@@ -5,6 +5,7 @@
       post: Artigo
       admin: Administrador
       category: Categoria
+      comment: Comentário
       author: Autor
     attributes:
       admin:
@@ -21,6 +22,11 @@
         author_id: Autor
       category:
         name: Nome
+      comment:
+        id: Identificador
+        body: Comentário
+        post_id: Post
+        author_id: Autor
       author:
         name: Nome
         description: Descrição
