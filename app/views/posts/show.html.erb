@@ -139,8 +139,14 @@
                 </p>
               </div>
               <div class="actions-row">
-                <a href="#" class="like">6</a>
-                <a href="#" class="deslike">4</a>
+                <%= button_to like_post_comment_path(@post, comment), class:"like", form: { turbo: false } do %>
+                  <%= comment.like %>
+                <% end %>
+
+                <%= button_to dislike_post_comment_path(@post, comment), class:"deslike", form: { turbo: false } do %>
+                  <%= comment.dislike %>
+                <% end %>
+
                 <%= link_to "", "https://twitter.com/intent/tweet?text=#{truncate(comment.body, length: 100)}&url=#{post_url(@post)}", class:"share" %>
               </div>
             </div>

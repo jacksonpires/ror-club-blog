@@ -23,7 +23,12 @@ Rails.application.routes.draw do
   end
 
   resources :posts, only: [:show] do
-    resources :comments
+    resources :comments do
+      member do
+        post "like"
+        post "dislike"
+      end
+    end
   end
 
   get "/inicio", to: "welcome#index"

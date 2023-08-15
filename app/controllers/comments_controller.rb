@@ -12,7 +12,26 @@ class CommentsController < ApplicationController
     else
       redirect_to(post_path(post), alert: "Comentário não foi criado! - #{comment.errors.full_messages.join(", ")}")
     end
+  end
 
+  def like
+    post = Post.friendly.find(params[:post_id])
+
+    if Comment.find(params[:id]).increment!(:like)
+      redirect_to(post_path(post), notice: "Registramos o seu like!")
+    else
+      redirect_to(post_path(post), alert: "Não foi possível registrar o seu like!")
+    end
+  end
+
+  def dislike
+    post = Post.friendly.find(params[:post_id])
+
+    if Comment.find(params[:id]).increment!(:dislike)
+      redirect_to(post_path(post), notice: "Registramos o seu dislike!")
+    else
+      redirect_to(post_path(post), alert: "Não foi possível registrar o seu dislike!")
+    end
   end
 
   private

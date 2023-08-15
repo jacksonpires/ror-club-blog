@@ -574,6 +574,9 @@
 
   .post-detail-comment-item .actions-row .like,
   .post-detail-comment-item .actions-row .deslike {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
     color: $black;
     font-size: 0.875rem;
     font-weight: $font-weight-bold;
