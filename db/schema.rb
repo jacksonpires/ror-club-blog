@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_15_001747) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_15_232528) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -75,6 +75,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_15_001747) do
     t.text "description"
   end
 
+  create_table "comment_like_dislikes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "comment_id", null: false
+    t.uuid "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_comment_like_dislikes_on_comment_id"
+    t.index ["user_id"], name: "index_comment_like_dislikes_on_user_id"
+  end
+
   create_table "comments", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "user_id", null: false
     t.uuid "post_id", null: false
@@ -125,6 +134,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_15_001747) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "comment_like_dislikes", "comments"
+  add_foreign_key "comment_like_dislikes", "users"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "posts", "authors"
