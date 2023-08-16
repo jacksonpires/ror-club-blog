@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :posts, only: [:show] do
+  resources :posts, only: [:index, :show] do
     resources :comments do
       member do
         post "like"
@@ -30,6 +30,8 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  resources :categories, only: [:index]
 
   get "/inicio", to: "welcome#index"
 
