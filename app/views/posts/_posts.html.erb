@@ -8,6 +8,9 @@
         <%= render partial: "post", locals: { post: post } %>
       <% end %>
     </div>
+    <div class="navigation">
+      <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+    </div>
     <div class="grid-mobile">
       <div class="bullets" id="postGridHomeBullets"></div>
       <div><a href="#" class="button clean">ver mais</a></div>

@@ -2,7 +2,7 @@
 
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @pagy, @posts = pagy(Post.all, items: 9)
   end
 
   def show

@@ -1,0 +1,52 @@
+# Standard pagy dictionary
+en:
+  pagy:
+    nav:
+      prev: "Prev"
+      next: "Next"
+      gap: "&hellip;"
+      current: "You're on page"
+    info:
+      single_page:
+        zero: "No %{item_name} found"
+        one: "Displaying <b>1</b> %{item_name}"
+        other: "Displaying <b>all %{count}</b> %{item_name}"
+      multiple_pages: "Displaying %{item_name} <b>%{from}-%{to}</b> of <b>%{count}</b> in total"
+      item_name:
+        zero: "items"
+        one: "item"
+        other: "items"
+    compact:
+      page: "Page"
+      of: "of"
+    items:
+      show: "Show"
+      items: "items per page"
+pt-BR:
+  pagy:
+    nav:
+      prev: "Anterior"
+      next: "Próximo"
+      gap: "&hellip;"
+      current: "Você está na página"
+    info:
+      single_page:
+        zero: "Nenhum %{item_name} encontrado"
+        one: "Exibindo <b>1</b> %{item_name}"
+        other: "Exibindo <b>%{count}</b> %{item_name}"
+      multiple_pages: "Exibindo %{item_name} <b>%{from}-%{to}</b> de <b>%{count}</b>"
+      item_name:
+        zero: "items"
+        one: "item"
+        other: "items"
+    compact:
+      page: "Página"
+      of: "de"
+    items:
+      show: "Exibindo"
+      items: "itens por página"
+  activerecord:
+    models:
+      order:
+        one: Pedido
+        other: Pedidos

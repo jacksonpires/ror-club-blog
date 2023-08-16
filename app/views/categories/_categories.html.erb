@@ -14,5 +14,8 @@
         </a>
       <% end %>
     </div>
+    <div class="navigation">
+      <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+    </div>
   </div>
 </section>

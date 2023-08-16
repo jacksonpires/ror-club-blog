@@ -2,6 +2,6 @@
 
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.all
+    @pagy, @categories = pagy(Category.all, items: 8)
   end
 end

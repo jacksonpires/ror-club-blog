@@ -1,0 +1,21 @@
+.navigation {
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $black;
+  font-size: large;
+
+  .page {
+    padding: 1rem;
+  }
+
+  .page.active {
+    color: $white;
+    background-color: $black;
+  }
+
+  .page.disabled {
+    color: $gray;
+  }
+}
