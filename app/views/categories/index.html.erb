@@ -1,1 +1,21 @@
-<%= render partial: "categories" %>
+<section class="section categories-grid-section">
+  <div class="container">
+    <div class="title-container with-item">
+      <h2 class="title">Navegue por todas as categorias</h2>
+    </div>
+    <div class="grid">
+      <% @categories.each do |category| %>
+        <a href="#" class="item">
+          <%= image_tag category.cover_image, alt:"Categoria", class:"item-image" %>
+          <div class="item-title"><%= category.name %></div>
+          <p class="item-description">
+            <%= category.description %>
+          </p>
+        </a>
+      <% end %>
+    </div>
+    <div class="navigation">
+      <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+    </div>
+  </div>
+</section>
