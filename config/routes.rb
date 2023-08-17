@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   end
 
   resources :posts, only: [:index, :show] do
+    member do
+      get :category
+    end
     resources :comments do
       member do
         post "like"

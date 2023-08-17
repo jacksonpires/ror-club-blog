@@ -5,13 +5,13 @@
     </div>
     <div class="grid">
       <% @categories.each do |category| %>
-        <a href="#" class="item">
+        <%= link_to category_post_path(category), class:"item" do %>
           <%= image_tag category.cover_image, alt:"Categoria", class:"item-image" %>
           <div class="item-title"><%= category.name %></div>
           <p class="item-description">
             <%= category.description %>
           </p>
-        </a>
+        <% end %>
       <% end %>
     </div>
     <div class="navigation">

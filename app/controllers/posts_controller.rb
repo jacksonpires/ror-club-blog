@@ -11,6 +11,11 @@ class PostsController < ApplicationController
     @comments = order_comments_by
   end
 
+  def category
+    @category = Category.find_by(id: params[:id])
+    @pagy, @posts = pagy(@category.posts, items: 9)
+  end
+
   private
 
   def order_comments_by
