@@ -9,6 +9,7 @@
     <div class="input-row">
       <div class="input-container">
         <%= form.label :body, class:"label" %>
+        <%= link_to "[markdown]", "#", id: "markdown-button" %>
         <%= form.text_area :body, disabled: (params[:action] == "show"), rows:"18", class:"textarea", placeholder:"Escreva aqui o conteúdo do post" %>
       </div>
     </div>
@@ -47,3 +48,30 @@
     <%= button_to "Apagar post", [:administrate, post], data: { turbo: false }, method: :delete, class:"button small" if (params[:action] == "show") %>
   <% end %>
 </div>
+
+<script>
+  const markdownButton = document.querySelector('#markdown-button');
+
+  markdownButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    openMarkdownEditor();
+  });
+
+  function openMarkdownEditor() {
+    const el = document.querySelector('textarea');
+    const stackedit = new Stackedit();
+
+    // Open the iframe
+    stackedit.openFile({
+      name: 'Filename', // with an optional filename
+      content: {
+        text: el.value // and the Markdown content.
+      }
+    });
+
+    // Listen to StackEdit events and apply the changes to the textarea.
+    stackedit.on('fileChange', (file) => {
+      el.value = file.content.text;
+    });
+  }
+</script>
