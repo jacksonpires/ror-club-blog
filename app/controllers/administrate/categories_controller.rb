@@ -18,7 +18,7 @@ class Administrate::CategoriesController < AdministrateController
 
   def create
     @category = Category.new(category_params)
-    @category.cover_image.attach(post_params[:cover_image])
+    @category.cover_image.attach(category_params[:cover_image])
 
     respond_to do |format|
       if @category.save
